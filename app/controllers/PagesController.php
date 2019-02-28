@@ -2,10 +2,14 @@
 
 namespace Controllers;
 
+require 'core/helpers.php';
+
 class PagesController
 {
     public function index()
     {
-        echo 'INDEX';
+        $message = 'Hello View!';
+
+        return view('index', ['message' => $message]);
     }
 }
