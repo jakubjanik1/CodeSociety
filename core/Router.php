@@ -42,8 +42,6 @@ class Router
 
     private function callAction($controller, $action)
     {
-        require "app/controllers/$controller.php";
-
         $controller = "Controllers\\$controller";
         $controller = new $controller;
 

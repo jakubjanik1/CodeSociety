@@ -2,8 +2,6 @@
 
 namespace Controllers;
 
-require 'core/helpers.php';
-
 class PagesController
 {
     public function index()

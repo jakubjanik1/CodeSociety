@@ -1,7 +1,6 @@
 <?php
 
-require 'core/Router.php';
-require 'core/Request.php';
+require 'vendor/autoload.php';
 
 use Core\{Router, Request};
 
