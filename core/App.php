@@ -6,12 +6,12 @@ class App
 {
     private static $registry = [];
 
-    public function bind($key, $value)
+    public static function bind($key, $value)
     {
         self::$registry[$key] = $value;
     }
 
-    public function get($key)
+    public static function get($key)
     {
         if (! array_key_exists($key, self::$registry))
         {
