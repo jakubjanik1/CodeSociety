@@ -30,17 +30,39 @@ class Router
 
     public function direct($uri, $method)
     {
-        if (! array_key_exists($uri, $this->routes[$method])) 
+        $uriParts = explode('/', $uri);
+        foreach ($this->routes[$method] as $route => $controller) 
         {
-            throw new \Exception('That route are not define');
-        }
+            $routeParts = explode('/', $route);
+            if ($route == $uri)
+            {
+                $this->callAction(...explode('@', $controller));
+                return;
+            }
+            else if (count($routeParts) == count($uriParts))
+            {
+                $params = [];
+                for ($i = 0; $i < count($routeParts); $i++)
+                {
+                    if (preg_match('/\{\w+\}/', $routeParts[$i]))
+                    {
+                        $params[trim($routeParts[$i], '{}')] = $uriParts[$i];
+                    }
+                    else if ($uriParts[$i] != $routeParts[$i])
+                    {
+                        continue 2;
+                    }
+                }
 
-        $this->callAction(
-            ...explode('@', $this->routes[$method][$uri])
-        );
+                $this->callAction(explode('@', $controller)[0], explode('@', $controller)[1], $params);
+                return;
+            }
+        }
+        
+        throw new \Exception('This route does not exists');
     }
 
-    private function callAction($controller, $action)
+    private function callAction($controller, $action, $params = [])
     {
         $controller = "Controllers\\$controller";
         $controller = new $controller;
@@ -50,6 +72,6 @@ class Router
             throw new \Exception('Controller does not exists');
         }
 
-        return $controller->$action();
+        return $controller->$action(...array_values($params));
     }
 }
