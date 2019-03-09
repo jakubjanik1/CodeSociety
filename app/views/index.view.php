@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-</head>
-<body>
-    <?= $message ?>
-</body>
-</html>
+<?php require 'partials/head.php' ?>
+    
+<?php require 'partials/footer.php' ?>

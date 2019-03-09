@@ -1,0 +1,36 @@
+.header__search-form
+{
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.search-form__input
+{
+    padding: 10px 10px 0 10px;
+    border-width: 0 0 1px 0;
+    border-color: #eaeaea;
+    margin-right: 6px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    width: 240px;
+    visibility: hidden;
+}
+
+.search-form__button
+{
+    background: #fff;
+    border: 0;
+    padding-top: 5px;
+}
+
+.search-form__icon
+{
+    color: var(--text-color);
+}
+
+.search-form__icon:hover
+{
+    cursor: pointer;
+    color: var(--primary-green);
+}

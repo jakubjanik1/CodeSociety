@@ -1,0 +1,24 @@
+.header__menu
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 4;
+    margin-left: 32px;
+}
+
+.menu__item
+{
+    list-style-type: none;
+    margin-right: 40px;
+}
+
+.menu__link
+{
+    text-decoration: none;
+}
+
+.menu__link:hover
+{
+    color: var(--primary-green); 
+}
