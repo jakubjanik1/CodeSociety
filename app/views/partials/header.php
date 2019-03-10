@@ -1,5 +1,5 @@
 <header class="header">
-    <img class="header__logo" src="public/img/logo.png">
+    <img class="header__logo" src="public/img/icon.png">
 
     <ul class="header__menu">
         <li class="menu__item"> 
@@ -24,4 +24,8 @@
         <button class="items__button items__button--secondary">Login</button>
         <button class="items__button items__button--primary">Register</button>
     </div>
+
+    <button class="header__toggle">
+        <i class="toggle__icon material-icons"> menu </i>
+    </button>
 </header>

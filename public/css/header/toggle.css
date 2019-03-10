@@ -1,0 +1,28 @@
+.header__toggle
+{
+    display: none;
+    border: 0;
+    background: #fff;
+}
+
+.toggle__icon
+{
+    font-size: 40px !important;
+}
+
+.toggle__icon:hover
+{
+    cursor: pointer;
+    color: var(--primary-green);
+}
+
+@media screen and (max-width: 1130px)
+{
+    .header__toggle
+    {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 18px;
+    }
+}

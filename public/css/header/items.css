@@ -1,14 +1,17 @@
 .header__items
 {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     margin-right: 150px;
+    margin-left: 32px;
+}
+
+.header__items > :last-child
+{
+    margin-left: 32px;
 }
 
 .items__button
 {
-    margin-left: 32px;
     padding: 10px;
     width: 128px;
     border: 0;
@@ -30,10 +33,23 @@
 .items__button--secondary
 {
     background: #fff;
+    border: 1px solid;
+    padding: 9px 10px 9px 10px;
 }
 
 .items__button--secondary:hover
 {
     color: var(--primary-green);
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 1130px)
+{
+    .header__items
+    {
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }

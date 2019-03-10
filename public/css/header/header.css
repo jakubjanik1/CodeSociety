@@ -22,4 +22,21 @@
     height: 80px;
     justify-content: space-around;
     align-items: center;
+    padding: 0;
+}
+
+
+@media screen and (max-width: 1130px)
+{
+   .header
+   {
+       flex-direction: column;
+       height: auto;
+       padding-bottom: 18px;
+   }
+
+   .hidden
+    {
+        display: none !important;
+    }
 }

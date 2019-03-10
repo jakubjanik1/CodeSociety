@@ -22,3 +22,20 @@
 {
     color: var(--primary-green); 
 }
+
+
+@media screen and (max-width: 1130px)
+{
+    .header__menu
+    {
+        margin-top: 16px;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .menu__item
+    {
+        margin-right: 0;
+        padding-bottom: 10px;
+    }
+}

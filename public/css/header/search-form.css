@@ -21,16 +21,30 @@
 {
     background: #fff;
     border: 0;
-    padding-top: 5px;
+    padding-top: 4px;
 }
 
 .search-form__icon
 {
     color: var(--text-color);
+    font-size: 28px !important;
 }
 
 .search-form__icon:hover
 {
     cursor: pointer;
     color: var(--primary-green);
+}
+
+@media screen and (max-width: 1130px)
+{
+    .header__search-form
+    {
+        margin-top: 8px;
+    }
+
+    .search-form__input
+    {
+        visibility: visible;
+    }
 }
