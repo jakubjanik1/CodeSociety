@@ -41,6 +41,7 @@
     .header__search-form
     {
         margin-top: 8px;
+        display: none;
     }
 
     .search-form__input

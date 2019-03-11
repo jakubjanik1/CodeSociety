@@ -31,7 +31,8 @@
         margin-top: 16px;
         flex-direction: column;
         margin-left: 0;
-    }
+        display: none;
+}
 
     .menu__item
     {
