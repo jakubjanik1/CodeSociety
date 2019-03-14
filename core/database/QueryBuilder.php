@@ -63,6 +63,22 @@ class QueryBuilder
         return $this;
     }
 
+    public function count()
+    {
+        return count($this->table);
+    }
+
+    public function orderBy($field, $direction)
+    {
+        usort($this->table, function($x, $y) use ($field, $direction) {
+            return $direction == 'asc' ? 
+                $x->$field > $y->$field : 
+                $x->$field < $y->$field;
+        });
+
+        return $this;
+    }
+
     public function get()
     {
         return $this->table;

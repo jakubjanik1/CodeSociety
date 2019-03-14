@@ -1,5 +1,5 @@
 <header class="header">
-    <img class="header__logo" src="public/img/icon.png">
+    <img class="header__logo" src="/public/img/icon.png">
 
     <ul class="header__menu">
         <li class="menu__item"> 
