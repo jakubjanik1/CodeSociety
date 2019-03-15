@@ -1,5 +1,12 @@
 <?php require 'partials/head.php' ?>
+    <?php foreach ($categories as $category): ?>
+        <?php 
+            echo "<a href='/articles/category/{$category}'>{$category}</a>";
+        ?>
+    <?php endforeach; ?>
+
     <?php foreach ($articles as $article): ?>
+        <br>
         <?= $article->id ?> <br>
         <?= $article->title ?> <br>
         <?= $article->category ?> <br>

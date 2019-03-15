@@ -3,13 +3,13 @@
 
     <ul class="header__menu">
         <li class="menu__item"> 
-            <a class="menu__link" href="articles"> Articles </a>
+            <a class="menu__link" href="/articles"> Articles </a>
         </li>
         <li class="menu__item"> 
-            <a class="menu__link" href="contact"> Contact </a>
+            <a class="menu__link" href="/contact"> Contact </a>
         </li>
         <li class="menu__item">
-            <a class="menu__link" href="about"> About </a>
+            <a class="menu__link" href="/about"> About </a>
         </li>
     </ul>
 

@@ -40,6 +40,13 @@ class QueryBuilder
         return $this;
     }
 
+    public function value($field)
+    {
+        $this->table = array_column($this->table, $field);
+
+        return $this;
+    }
+
     public function where($field, $value)
     {
         $this->table = array_filter($this->table, function($item) use ($field, $value) {
@@ -75,6 +82,13 @@ class QueryBuilder
                 $x->$field > $y->$field : 
                 $x->$field < $y->$field;
         });
+
+        return $this;
+    }
+
+    public function distinct()
+    {
+        $this->table = array_unique($this->table, SORT_REGULAR);
 
         return $this;
     }
