@@ -1,0 +1,14 @@
+.articles__title
+{
+    font-size: 32px;
+}
+
+.articles__title::after
+{
+    content: "";
+    border-bottom: 2px solid var(--primary-green);
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 8px;
+}

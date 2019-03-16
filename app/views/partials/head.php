@@ -12,12 +12,18 @@
     <link rel="stylesheet" href="/public/css/header/items.css">
     <link rel="stylesheet" href="/public/css/header/toggle.css">
     <link rel="stylesheet" href="/public/css/variables.css">
+    <link rel="stylesheet" href="/public/css/content.css">
+    <link rel="stylesheet" href="/public/css/articles/title.css">
+    <link rel="stylesheet" href="/public/css/articles/articles.css">
+    <link rel="stylesheet" href="/public/css/articles/categories.css">
 
     <link href='https://fonts.googleapis.com/css?family=Dosis:500,600,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="/public/js/header/search-form.js"></script>
     <script src="/public/js/header/toggle.js"></script>
+    <script src="/public/js/articles/categories.js"></script>
 </head>
 <body>
     <?php require 'header.php' ?>
+    <main class="content">

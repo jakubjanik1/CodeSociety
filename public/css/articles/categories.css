@@ -1,0 +1,23 @@
+.articles__categories
+{
+    display: flex;
+    margin-top: 32px;
+    margin-left: 40px;
+    text-align: center;
+}
+
+.categories__item
+{
+    list-style-type: none;
+    margin-right: 40px;
+}
+
+.categories__link
+{
+    text-decoration: none;
+}
+
+.categories__link:hover
+{
+    color: var(--primary-green);
+}
