@@ -14,4 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     window.dispatchEvent(new Event('resize'));
+
+    highlightCurrentCategory();
 });
+
+function highlightCurrentCategory() {
+    let categoriesLinks = document.querySelectorAll('.categories__link');
+    let path = location.pathname;
+
+    for (let link of categoriesLinks) {
+        if (path.includes(link.innerText)) {
+            link.style.color = 'var(--primary-green)';
+            return;
+        }
+    }
+
+    categoriesLinks[0].style.color = 'var(--primary-green)';
+}

@@ -22,6 +22,7 @@
 
     <script src="/public/js/header/search-form.js"></script>
     <script src="/public/js/header/toggle.js"></script>
+    <script src="/public/js/header/menu.js"></script>
     <script src="/public/js/articles/categories.js"></script>
 </head>
 <body>
