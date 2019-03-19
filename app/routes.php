@@ -10,6 +10,3 @@ $router->get('articles/category/{category}/page/{page}', 'ArticlesController@art
 
 $router->get('articles/author/{author}/page/{page}', 'ArticlesController@articlesByAuthor');
 $router->get('articles/author/{author}', 'ArticlesController@articlesByAuthor');
-
-$router->get('articles/category/{category}/author/{author}/page/{page}', 'ArticlesController@articles');
-$router->get('articles/category/{category}/author/{author}', 'ArticlesController@articles');

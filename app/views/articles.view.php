@@ -8,28 +8,27 @@
             </li>
             <?php foreach ($categories as $category): ?>
                     <li class="categories__item">
-                        <?= "<a class='categories__link' href='/articles/category/{$category}'>{$category}</a>" ?>
+                        <a class="categories__link" href="/articles/category/<?= $category ?>"> <?= $category ?> </a>
                     </li>
             <?php endforeach; ?>
         </ul>
 
         <div class="articles__list">
-            <?php foreach ($articles as $article): ?>
+            <?php foreach ($articles as $article): ?>         
                 <article class="list__article">
-                    <?= $article->id ?>
-                    <?= $article->title ?>
-                    <?= $article->category ?>
-                    <?= '<img src="data:image/png;base64,' . base64_encode($article->thumbnail) . '">' ?>
+                    <p class="article__id"><?= $article->id ?></p>
+                    <img class="article__thumbnail" src="data:image/png;base64, <?= base64_encode($article->thumbnail) ?> ">
+                    <h1 class="article__title"> <?= $article->title ?> </h1>
+                    <a class="article__category" href="/articles/category/<?= $article->category ?>"><?= $article->category ?></a>
+                    <h2 class="article__date"> <?= Carbon\Carbon::parse($article->date)->diffForHumans() ?> </h2>
                 </article>
             <?php endforeach; ?>
         </div>
 
         <div class="articles__pagination">
             <?php for ($page = 1; $page <= $totalPages; $page++): ?>
-                <?php 
-                    $uri = trim(preg_replace('/\/page\/\d+/', '', $_SERVER['REQUEST_URI']), '/');
-                    echo "<a class='pagination__link' href='/{$uri}/page/{$page}'>{$page}</a>";
-                ?>
+                <?php $uri = trim(preg_replace('/\/page\/\d+/', '', $_SERVER['REQUEST_URI']), '/') ?>
+                <a class="pagination__link" href="/<?= $uri ?>/page/<?= $page ?>"> <?= $page ?> </a>
             <?php endfor; ?>
         </div>
     </div>

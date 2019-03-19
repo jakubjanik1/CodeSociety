@@ -13,15 +13,6 @@ class ArticlesController
         $this->repository = new ArticlesRepository();
     }
 
-    public function articles($category, $author, $page = 1)
-    {
-        $articles = $this->repository->getArticles($page, $category, $author);
-        $totalPages = $this->repository->getPagesCount($category, $author);
-        $categories = $this->repository->getCategories();
-
-        return view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'categories' => $categories]);
-    }
-
     public function articlesByPage($page = 1)
     {
         $articles = $this->repository->getArticles($page);

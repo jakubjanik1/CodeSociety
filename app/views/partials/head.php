@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/public/css/articles/title.css">
     <link rel="stylesheet" href="/public/css/articles/articles.css">
     <link rel="stylesheet" href="/public/css/articles/categories.css">
+    <link rel="stylesheet" href="/public/css/articles/list.css">
+    <link rel="stylesheet" href="/public/css/articles/article.css">
 
     <link href='https://fonts.googleapis.com/css?family=Dosis:500,600,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,6 +26,7 @@
     <script src="/public/js/header/toggle.js"></script>
     <script src="/public/js/header/menu.js"></script>
     <script src="/public/js/articles/categories.js"></script>
+    <script src="/public/js/articles/article.js"></script>
 </head>
 <body>
     <?php require 'header.php' ?>

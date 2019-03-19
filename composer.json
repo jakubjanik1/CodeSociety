@@ -6,5 +6,8 @@
         "files": [
             "core/helpers.php" 
         ]
+    },
+    "require": {
+        "nesbot/carbon": "^1.33"
     }
 }
