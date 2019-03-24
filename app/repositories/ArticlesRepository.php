@@ -7,7 +7,7 @@ use Core\App;
 class ArticlesRepository
 {
     private $db;
-    const PAGE_SIZE = 5;
+    const PAGE_SIZE = 1;
 
     public function __construct()
     {

@@ -4,7 +4,7 @@
 
         <ul class="articles__categories">
             <li class="categories__item">
-               <a class="categories__link" href="/articles/">All</a>
+               <a class="categories__link" href="/articles">All</a>
             </li>
             <?php foreach ($categories as $category): ?>
                     <li class="categories__item">
@@ -25,11 +25,19 @@
             <?php endforeach; ?>
         </div>
 
+        <?php $uri = trim(preg_replace('/\/page\/\d+/', '', $_SERVER['REQUEST_URI']), '/') ?>
         <div class="articles__pagination">
-            <?php for ($page = 1; $page <= $totalPages; $page++): ?>
-                <?php $uri = trim(preg_replace('/\/page\/\d+/', '', $_SERVER['REQUEST_URI']), '/') ?>
-                <a class="pagination__link" href="/<?= $uri ?>/page/<?= $page ?>"> <?= $page ?> </a>
+            <button class="pagination__button pagination__button--prev"> PREV </button>
+            <a class="pagination__link" href="/<?= $uri ?>/page/1">1</a>
+            <i class="pagination__delimiter material-icons"> more_horiz </i>
+
+            <?php for ($page = 2; $page < $totalPages; $page++): ?>    
+                <a class="pagination__link" href="/<?= $uri ?>/page/<?= $page ?>"><?= $page ?></a>
             <?php endfor; ?>
+
+            <i class="pagination__delimiter material-icons"> more_horiz </i>
+            <a class="pagination__link" href="/<?= $uri ?>/page/<?= $totalPages ?>"><?= $totalPages ?></a>
+            <button class="pagination__button pagination__button--next"> NEXT </button>
         </div>
     </div>
 <?php require 'partials/footer.php' ?>
