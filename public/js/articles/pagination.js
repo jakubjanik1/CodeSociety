@@ -54,17 +54,17 @@ function getMediumPagination() {
 
     for (let link of links) {
         if (! newLinks.includes(link.innerText)) {
-            link.classList.add('pagination__link--hidden');
+            link.remove();
         }
     }
 
     if (! [1, 2, 3].includes(currentPage)) {
-        pagination.querySelectorAll('.pagination__delimiter')[0].classList.add('pagination__delimiter--visible');
+        createLeftDelimiter(pagination);
     }
     
     let length = links.length;
     if (! [length, length - 1, length - 2].includes(currentPage)) {
-        pagination.querySelectorAll('.pagination__delimiter')[1].classList.add('pagination__delimiter--visible');
+        createRightDelimiter(pagination);
     }
 
     pagination = setWidth(pagination);
@@ -79,7 +79,7 @@ function getSmallPagination() {
 
     for (let link of links) {
         if (link.innerText != currentPage) {
-            link.classList.add('pagination__link--hidden');
+            link.remove();
         }
     }
 
@@ -121,4 +121,22 @@ function prevPage() {
     if (currentPage != 1) {
         location.href = location.href.replace(/page\/\d*/, `page/${currentPage - 1}`);
     }   
+}
+
+function createLeftDelimiter(pagination) {
+    let delimiter = document.createElement('i');
+    delimiter.classList.add('pagination__delimiter', 'material-icons');
+    delimiter.innerHTML = 'more_horiz';
+
+    let prevButton =  pagination.querySelector('.pagination__button--prev');
+    prevButton.parentNode.insertBefore(delimiter, prevButton.nextSibling.nextSibling.nextSibling);
+}
+
+function createRightDelimiter(pagination) {
+    let delimiter = document.createElement('i');
+    delimiter.classList.add('pagination__delimiter', 'material-icons');
+    delimiter.innerHTML = 'more_horiz';
+
+    let nextButton =  pagination.querySelector('.pagination__button--next');
+    nextButton.parentNode.insertBefore(delimiter, nextButton.previousSibling.previousSibling);
 }

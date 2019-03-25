@@ -10,7 +10,7 @@
                     <li class="categories__item">
                         <a class="categories__link" href="/articles/category/<?= $category ?>"> <?= $category ?> </a>
                     </li>
-            <?php endforeach; ?>
+            <?php endforeach ?>
         </ul>
 
         <div class="articles__list">
@@ -22,21 +22,17 @@
                     <a class="article__category" href="/articles/category/<?= $article->category ?>"><?= $article->category ?></a>
                     <h2 class="article__date"> <?= Carbon\Carbon::parse($article->date)->diffForHumans() ?> </h2>
                 </article>
-            <?php endforeach; ?>
+            <?php endforeach ?>
         </div>
 
         <?php $uri = trim(preg_replace('/\/page\/\d+/', '', $_SERVER['REQUEST_URI']), '/') ?>
         <div class="articles__pagination">
             <button class="pagination__button pagination__button--prev"> PREV </button>
-            <a class="pagination__link" href="/<?= $uri ?>/page/1">1</a>
-            <i class="pagination__delimiter material-icons"> more_horiz </i>
 
-            <?php for ($page = 2; $page < $totalPages; $page++): ?>    
+            <?php for ($page = 1; $page <= $totalPages; $page++): ?>    
                 <a class="pagination__link" href="/<?= $uri ?>/page/<?= $page ?>"><?= $page ?></a>
             <?php endfor; ?>
 
-            <i class="pagination__delimiter material-icons"> more_horiz </i>
-            <a class="pagination__link" href="/<?= $uri ?>/page/<?= $totalPages ?>"><?= $totalPages ?></a>
             <button class="pagination__button pagination__button--next"> NEXT </button>
         </div>
     </div>

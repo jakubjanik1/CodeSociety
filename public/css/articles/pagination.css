@@ -26,11 +26,6 @@
     box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
 }
 
-.pagination__link--hidden
-{
-    display: none;
-}
-
 .pagination__link:hover
 {
     box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
@@ -57,14 +52,7 @@
 .pagination__delimiter
 {
     display: flex !important;
-    position: absolute;
-    left: -9999px;
     align-items: center;
     font-size: 17px !important;
     margin: 0 2px 0 2px;
-}
-
-.pagination__delimiter--visible
-{
-    position: static;
 }
