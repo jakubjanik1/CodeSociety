@@ -107,7 +107,7 @@ function getCurrentPage() {
 
 function nextPage() {
     let currentPage = getCurrentPage();
-    let lastPage = event.target.parentElement.children.length - 4;
+    let lastPage = event.target.parentElement.children.length - 2;
 
     if (currentPage != lastPage) {
         let uri = location.href.replace(/\/page\/\d*/, '');

@@ -13,15 +13,6 @@ class ArticlesController
         $this->repository = new ArticlesRepository();
     }
 
-    public function articlesByPage($page = 1)
-    {
-        $articles = $this->repository->getArticles($page);
-        $totalPages = $this->repository->getPagesCount();
-        $categories = $this->repository->getCategories();
-
-        return view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'categories' => $categories]);
-    }
-
     public function articlesByCategory($category, $page = 1)
     {
         $articles = $this->repository->getArticles($page, $category);
@@ -31,12 +22,12 @@ class ArticlesController
         return view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'categories' => $categories]);
     }
 
-    public function articlesByAuthor($author, $page = 1)
+    public function articlesByPage($page = 1)
     {
-        $articles = $this->repository->getArticles($page, null, $author);
-        $totalPages = $this->repository->getPagesCount(null, $author);
+        $articles = $this->repository->getArticles($page);
+        $totalPages = $this->repository->getPagesCount();
         $categories = $this->repository->getCategories();
 
-        return view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'categories' => $categories]);    
+        return view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'categories' => $categories]);
     }
 }

@@ -14,9 +14,9 @@ class ArticlesRepository
         $this->db = App::get('database');
     }
 
-    public function getArticles($page, $category = null, $author = null)
+    public function getArticles($page, $category = null)
     {
-        $articles = $this->getFilteredArticles($category, $author);
+        $articles = $this->getFilteredArticles($category);
 
         $articles = $articles->orderBy('date', 'desc')
             ->skip(($page - 1) * self::PAGE_SIZE)
@@ -26,9 +26,9 @@ class ArticlesRepository
         return $articles;
     }
 
-    public function getPagesCount($category = null, $author = null)
+    public function getPagesCount($category = null)
     {
-        $articles = $this->getFilteredArticles($category, $author);
+        $articles = $this->getFilteredArticles($category);
 
         return ceil($articles->count() / self::PAGE_SIZE);
     }
@@ -42,12 +42,11 @@ class ArticlesRepository
             ->get();
     }
 
-    private function getFilteredArticles($category, $author)
+    private function getFilteredArticles($category)
     {
         $articles = $this->db->table('article');
 
         $articles = $category ? $articles->where('category', $category) : $articles;
-        $articles = $author ? $articles->where('author', $author) : $articles;
 
         return $articles;
     }
