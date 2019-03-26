@@ -53,4 +53,9 @@
         margin-top: 10px;
         display: none;
     }
+
+    .header__items--expanded
+    {
+        display: flex;
+    }
 }

@@ -6,15 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('resize', function (event) {
         if (event.target.innerWidth > 1130) {
-            menu.classList.remove('visible');
-            searchForm.classList.remove('visible');
-            items.classList.remove('visible');
+            menu.classList.remove('header__menu--expanded');
+            searchForm.classList.remove('header__search-form--expanded');
+            items.classList.remove('header__items--expanded');
         }
     });
 
     toggle.addEventListener('click', function () {
-        menu.classList.toggle('visible');
-        searchForm.classList.toggle('visible');
-        items.classList.toggle('visible');
+        menu.classList.toggle('header__menu--expanded');
+        searchForm.classList.toggle('header__search-form--expanded');
+        items.classList.toggle('header__items--expanded');
     });
 });

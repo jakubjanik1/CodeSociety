@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('resize', function() {
          if (event.target.innerWidth < categoriesWidth) {
-            categories.style['flex-direction'] = 'column';
-            items.forEach(item => item.style['margin-bottom'] = '10px');
+            categories.classList.add('articles__categories--folded');
+            items.forEach(item => item.classList.add('categories__item--separated'));
         } else {
-            categories.style['flex-direction'] = '';
-            items.forEach(item => item.style = '');
+            categories.classList.remove('articles__categories--folded');
+            items.forEach(item => item.classList.remove('categories__item--separated'));
         }
     });
 
@@ -24,10 +24,10 @@ function highlightCurrentCategory() {
 
     for (let link of categoriesLinks) {
         if (path.includes(link.innerText)) {
-            link.style.color = 'var(--primary-green)';
+            link.classList.add('categories__link--current');
             return;
         }
     }
 
-    categoriesLinks[0].style.color = 'var(--primary-green)';
+    categoriesLinks[0].classList.add('categories__link--current');
 }

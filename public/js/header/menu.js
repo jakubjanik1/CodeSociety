@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for (let link of menuLinks) {
         if (path.includes(link.innerText.trim().toLowerCase())) {
-            link.style.color = 'var(--primary-green)';
+            link.classList.add('menu__link--current');
         }
     }
 });

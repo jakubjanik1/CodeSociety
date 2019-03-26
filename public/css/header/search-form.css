@@ -17,6 +17,11 @@
     visibility: hidden;
 }
 
+.search-form__input--visible
+{
+    visibility: visible;
+}
+
 .search-form__button
 {
     background: #fff;
@@ -42,6 +47,11 @@
     {
         margin-top: 8px;
         display: none;
+    }
+
+    .header__search-form--expanded
+    {
+        display: flex;
     }
 
     .search-form__input

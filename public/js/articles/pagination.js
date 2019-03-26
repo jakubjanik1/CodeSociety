@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let medium = getMediumPagination();
     let small = getSmallPagination();
 
+    window.large = large;
     window.addEventListener('resize', () => changePagination(large, medium, small));
     window.addEventListener('load', () => changePagination(large, medium, small));
 });
@@ -31,11 +32,7 @@ function changePagination(large, medium, small) {
     pagination.querySelector('.pagination__button--prev').addEventListener('click', prevPage);
     pagination.querySelector('.pagination__button--next').addEventListener('click', nextPage);
 
-    for (let link of pagination.querySelectorAll('.pagination__link')) {
-        if (link.innerText == getCurrentPage()) {
-            link.classList.add('pagination__link--current');
-        }
-    }
+    highlightCurrentPage(pagination);
 }
 
 function getLargePagination() {
@@ -105,9 +102,13 @@ function getCurrentPage() {
     return currentPage;
 }
 
+function getLastPage() {
+    return large.querySelectorAll('.pagination__link').length;
+}
+
 function nextPage() {
     let currentPage = getCurrentPage();
-    let lastPage = event.target.parentElement.children.length - 2;
+    let lastPage = getLastPage();
 
     if (currentPage != lastPage) {
         let uri = location.href.replace(/\/page\/\d*/, '');
@@ -139,4 +140,13 @@ function createRightDelimiter(pagination) {
 
     let nextButton =  pagination.querySelector('.pagination__button--next');
     nextButton.parentNode.insertBefore(delimiter, nextButton.previousSibling.previousSibling);
+}
+
+function highlightCurrentPage(pagination) {
+    let currentPage = getCurrentPage();
+    for (let link of pagination.querySelectorAll('.pagination__link')) {
+        if (link.innerText == currentPage) {
+            link.classList.add('pagination__link--current');
+        }
+    }
 }

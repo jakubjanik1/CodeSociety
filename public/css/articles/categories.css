@@ -6,10 +6,20 @@
     text-align: center;
 }
 
+.articles__categories--folded
+{
+    flex-direction: column;
+}
+
 .categories__item
 {
     list-style-type: none;
     margin-right: 40px;
+}
+
+.categories__item--separated
+{
+    margin-bottom: 10px;
 }
 
 .categories__link
@@ -17,7 +27,7 @@
     text-decoration: none;
 }
 
-.categories__link:hover
+.categories__link--current, .categories__link:hover
 {
     color: var(--primary-green);
 }
