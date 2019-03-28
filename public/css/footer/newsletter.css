@@ -1,0 +1,52 @@
+.footer__newsletter
+{
+    max-width: 363px;
+    text-align: center;
+}
+
+.newsletter__description
+{
+    margin-bottom: 16px;
+    line-height: 23px;
+}
+
+.newsletter__input
+{
+    width: 160px;
+    padding: 6px;
+    border-radius: 4px 0 0 4px;
+    border-width: 1px 0 1px 1px;
+    border-color: var(--text-color);
+}
+
+.newsletter__button
+{
+    padding: 7px;
+    margin-left: -5px;
+    background: var(--primary-green);
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    color: #fff;
+}
+
+.newsletter__button:hover
+{
+    background: var(--hover-green);
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 950px)
+{
+    .footer__newsletter
+    {
+        margin-bottom: 32px;
+        text-align: center;
+        max-width: 423px;
+    }
+
+    .newsletter__description
+    {
+        padding: 0 30px 0 30px;
+    }
+}

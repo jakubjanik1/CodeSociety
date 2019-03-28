@@ -1,0 +1,16 @@
+.footer
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid #eaeaea;
+}
+
+
+@media screen and (max-width: 950px)
+{
+    .footer
+    {
+        flex-direction: column;
+    }
+}
