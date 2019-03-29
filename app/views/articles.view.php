@@ -6,12 +6,16 @@
             <li class="categories__item">
                <a class="categories__link" href="/articles">All</a>
             </li>
-            <?php foreach ($categories as $category): ?>
-                    <li class="categories__item">
-                        <a class="categories__link" href="/articles/category/<?= $category ?>"> <?= $category ?> </a>
-                    </li>
+            <?php foreach ($categories ?? [] as $category): ?>
+                <li class="categories__item">
+                    <a class="categories__link" href="/articles/category/<?= $category ?>"> <?= $category ?> </a>
+                </li>
             <?php endforeach ?>
         </ul>
+
+        <div class="articles__search-info">
+            Search results for: <span class="search-info__term"> <?= str_replace('_', ' ', $searchTerm) ?? '' ?> </span>
+        </div>
 
         <div class="articles__list">
             <?php foreach ($articles as $article): ?>         

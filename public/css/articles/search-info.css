@@ -1,0 +1,25 @@
+.articles__search-info
+{
+    margin-top: 32px;
+    text-align: center;
+}
+
+.search-info__term
+{
+    font-weight: bold;
+}
+
+.articles__nothing-found-title
+{
+    margin-top: 32px;
+    margin-bottom: 8px;
+    font-size: 25px;
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+.articles__nothing-found-comment
+{
+    margin: 0 32px 46px 32px;
+    text-align: center;
+}

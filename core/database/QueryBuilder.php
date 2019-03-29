@@ -56,6 +56,15 @@ class QueryBuilder
         return $this;
     }
 
+    public function whereRegexp($field, $pattern)
+    {
+        $this->table = array_filter($this->table, function($item) use ($field, $pattern) {
+            return preg_match($pattern, $item->$field);
+        });
+
+        return $this;
+    }
+
     public function skip($offset)
     {
         $this->table = array_slice($this->table, $offset);

@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     let categories = document.querySelector('.articles__categories');
+    
+    if (! categories) {
+        return;
+    }
+
     let items = document.querySelectorAll('.categories__item');
     let categoriesWidth = categories.clientWidth + 40;
 

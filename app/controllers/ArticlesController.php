@@ -30,4 +30,12 @@ class ArticlesController
 
         return view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'categories' => $categories]);
     }
+
+    public function search($searchTerm, $page = 1)
+    {
+        $articles = $this->repository->getArticles($page, null, $searchTerm);
+        $totalPages = $this->repository->getPagesCount(null, $searchTerm);
+
+        return view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'searchTerm' => $searchTerm]);
+    }
 }

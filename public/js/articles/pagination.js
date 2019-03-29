@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let large = getLargePagination();
-    let medium = getMediumPagination();
-    let small = getSmallPagination();
+    try {
+        let large = getLargePagination();
+        let medium = getMediumPagination();
+        let small = getSmallPagination();
 
-    window.large = large;
-    window.addEventListener('resize', () => changePagination(large, medium, small));
-    window.addEventListener('load', () => changePagination(large, medium, small));
+        window.large = large;
+        window.addEventListener('resize', () => changePagination(large, medium, small));
+        window.addEventListener('load', () => changePagination(large, medium, small));
+    } catch (error) {
+        return;
+    }
 });
 
 function changePagination(large, medium, small) {
@@ -36,14 +40,14 @@ function changePagination(large, medium, small) {
 }
 
 function getLargePagination() {
-    let pagination = document.querySelector('.articles__pagination').cloneNode(true);
+    let pagination = clonePagnation();
 
     pagination = setWidth(pagination);
     return pagination;
 }
 
 function getMediumPagination() {
-    let pagination = document.querySelector('.articles__pagination').cloneNode(true);
+    let pagination = clonePagnation();
     let links = pagination.querySelectorAll('.pagination__link');
 
     let currentPage = getCurrentPage();
@@ -69,7 +73,7 @@ function getMediumPagination() {
 }
 
 function getSmallPagination() {
-    let pagination = document.querySelector('.articles__pagination').cloneNode(true);
+    let pagination = clonePagnation();
     let links = pagination.querySelectorAll('.pagination__link');
 
     let currentPage = getCurrentPage();
@@ -82,6 +86,16 @@ function getSmallPagination() {
 
     pagination = setWidth(pagination);
     return pagination;
+}
+
+function clonePagnation() {
+    let pagination = document.querySelector('.articles__pagination');
+    
+    if (! pagination) {
+        throw new Error();
+    }
+
+    return pagination.cloneNode(true);
 }
 
 function setWidth(pagination) {

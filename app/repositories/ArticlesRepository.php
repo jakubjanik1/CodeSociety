@@ -14,9 +14,9 @@ class ArticlesRepository
         $this->db = App::get('database');
     }
 
-    public function getArticles($page, $category = null)
+    public function getArticles($page, $category = null, $searchTerm = null)
     {
-        $articles = $this->getFilteredArticles($category);
+        $articles = $this->getFilteredArticles($category, $searchTerm);
 
         $articles = $articles->orderBy('date', 'desc')
             ->skip(($page - 1) * self::PAGE_SIZE)
@@ -26,9 +26,9 @@ class ArticlesRepository
         return $articles;
     }
 
-    public function getPagesCount($category = null)
+    public function getPagesCount($category = null, $searchTerm = null)
     {
-        $articles = $this->getFilteredArticles($category);
+        $articles = $this->getFilteredArticles($category, $searchTerm);
 
         return ceil($articles->count() / self::PAGE_SIZE);
     }
@@ -42,11 +42,14 @@ class ArticlesRepository
             ->get();
     }
 
-    private function getFilteredArticles($category)
+    private function getFilteredArticles($category, $searchTerm = null)
     {
         $articles = $this->db->table('article');
 
         $articles = $category ? $articles->where('category', $category) : $articles;
+
+        $searchTerm = str_replace('_', ' ', $searchTerm);
+        $articles = $searchTerm ? $articles->whereRegexp('title', "/.*{$searchTerm}.*/i") : $articles;
 
         return $articles;
     }
