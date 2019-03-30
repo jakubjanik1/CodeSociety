@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     let input = document.querySelector('.search-form__input');
 
+    input.addEventListener('keyup', function(event) {
+       if (event.key == 'Enter') {
+           document.querySelector('.search-form__button').click();
+       }
+    });
+
     document.addEventListener('click', function (event) {     
         if (event.target.closest('.search-form__button')) {
             if (! input.classList.contains('search-form__input--visible') || input.classList.length == 1 && document.body.clientWidth > 1130) {
