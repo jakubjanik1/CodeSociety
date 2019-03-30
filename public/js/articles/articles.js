@@ -1,14 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
+    let categories = document.querySelector('.articles__categories');
+    let searchInfo = document.querySelector('.articles__search-info');
+
     if (location.href.includes('search')) {
-        document.querySelector('.articles__categories').remove();
+        categories && categories.remove();
+
+        searchInfo && searchInfo.classList.add('articles__search-info--visible');
     } else {
-        document.querySelector('.articles__search-info').remove();
+        searchInfo && searchInfo.remove();
     }
 
     let articles = document.querySelector('.articles__list');
     let pagination = document.querySelector('.articles__pagination');
 
-    if (location.href.includes('search') && !articles.children.length) {
+    if (location.href.includes('search') && articles && !articles.children.length) {
         articles.remove();
         pagination.remove();
 

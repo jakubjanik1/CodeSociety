@@ -1,7 +1,13 @@
 .articles__search-info
 {
+    display: none;
     margin-top: 32px;
     text-align: center;
+}
+
+.articles__search-info--visible
+{
+    display: block;
 }
 
 .search-info__term
@@ -20,6 +26,6 @@
 
 .articles__nothing-found-comment
 {
-    margin: 0 32px 46px 32px;
+    margin: 0 32px 64px 32px;
     text-align: center;
 }

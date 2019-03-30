@@ -19,7 +19,9 @@ class ArticlesController
         $totalPages = $this->repository->getPagesCount($category);
         $categories = $this->repository->getCategories();
 
-        return view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'categories' => $categories]);
+        return $page <= $totalPages ? 
+            view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'categories' => $categories]) :
+            view('error404');
     }
 
     public function articlesByPage($page = 1)
@@ -28,7 +30,9 @@ class ArticlesController
         $totalPages = $this->repository->getPagesCount();
         $categories = $this->repository->getCategories();
 
-        return view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'categories' => $categories]);
+        return $page <= $totalPages ? 
+            view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'categories' => $categories]) :
+            view('error404');
     }
 
     public function search($searchTerm, $page = 1)
@@ -36,6 +40,8 @@ class ArticlesController
         $articles = $this->repository->getArticles($page, null, $searchTerm);
         $totalPages = $this->repository->getPagesCount(null, $searchTerm);
 
-        return view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'searchTerm' => $searchTerm]);
+        return $page <= $totalPages || $page == 1 ?
+            view('articles', ['articles' => $articles, 'totalPages' => $totalPages, 'searchTerm' => $searchTerm]) : 
+            view('error404');
     }
 }

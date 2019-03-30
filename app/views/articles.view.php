@@ -14,7 +14,7 @@
         </ul>
 
         <div class="articles__search-info">
-            Search results for: <span class="search-info__term"> <?= str_replace('_', ' ', $searchTerm) ?? '' ?> </span>
+            Search results for: <span class="search-info__term"> <?= isset($searchTerm) ? str_replace('_', ' ', $searchTerm) : '' ?> </span>
         </div>
 
         <div class="articles__list">

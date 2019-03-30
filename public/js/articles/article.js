@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function viewArticle(event) {
-    let articleId = event.target.children[0].innerText;
+    let articleId = event.currentTarget.children[0].innerText;
     location.href = `/article/${articleId}`;
 }

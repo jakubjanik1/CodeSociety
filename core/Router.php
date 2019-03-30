@@ -59,7 +59,7 @@ class Router
             }
         }
         
-        throw new \Exception('This route does not exists');
+        return view('error404');
     }
 
     private function callAction($controller, $action, $params = [])
