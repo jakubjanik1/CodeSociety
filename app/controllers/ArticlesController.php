@@ -13,6 +13,15 @@ class ArticlesController
         $this->repository = new ArticlesRepository();
     }
 
+    public function article($id)
+    {
+        $article = $this->repository->getArticle($id);
+
+        return $article ? 
+            view('article', ['article' => $article]) : 
+            view('error404');
+    }
+
     public function articlesByCategory($category, $page = 1)
     {
         $articles = $this->repository->getArticles($page, $category);

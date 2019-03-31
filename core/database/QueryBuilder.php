@@ -106,4 +106,10 @@ class QueryBuilder
     {
         return $this->table;
     }
+
+    public function first()
+    {
+        $this->table = array_values($this->table);
+        return $this->table[0] ?? null;
+    }
 }

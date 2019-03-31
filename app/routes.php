@@ -8,3 +8,5 @@ $router->get('articles/category/{category}/page/{page}', 'ArticlesController@art
 
 $router->get('articles/search/{searchTerm}', 'ArticlesController@search');
 $router->get('articles/search/{searchTerm}/page/{page}', 'ArticlesController@search');
+
+$router->get('article/{id}', 'ArticlesController@article');

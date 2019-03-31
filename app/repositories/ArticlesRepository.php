@@ -14,6 +14,15 @@ class ArticlesRepository
         $this->db = App::get('database');
     }
 
+    public function getArticle($id)
+    {
+        $article = $this->db->table('article')
+            ->where('id', $id)
+            ->first();
+
+        return $article;
+    }
+
     public function getArticles($page, $category = null, $searchTerm = null)
     {
         $articles = $this->getFilteredArticles($category, $searchTerm);
