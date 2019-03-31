@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let articles = document.querySelectorAll('.list__article');
+    let articles = document.querySelectorAll('.list__article-thumbnail');
     articles.forEach(function(article) {
         article.addEventListener('click', viewArticle);
     });

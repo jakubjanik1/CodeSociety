@@ -19,12 +19,12 @@
 
         <div class="articles__list">
             <?php foreach ($articles as $article): ?>         
-                <article class="list__article">
-                    <p class="article__id"><?= $article->id ?></p>
-                    <img class="article__thumbnail" src="data:image/png;base64, <?= base64_encode($article->thumbnail) ?> ">
-                    <h1 class="article__title"> <?= $article->title ?> </h1>
-                    <a class="article__category" href="/articles/category/<?= $article->category ?>"><?= $article->category ?></a>
-                    <h2 class="article__date"> <?= Carbon\Carbon::parse($article->date)->diffForHumans() ?> </h2>
+                <article class="list__article-thumbnail">
+                    <p class="article-thumbnail__id"><?= $article->id ?></p>
+                    <img class="article-thumbnail__image" src="data:image/png;base64, <?= base64_encode($article->image) ?> ">
+                    <h1 class="article-thumbnail__title"> <?= $article->title ?> </h1>
+                    <a class="article-thumbnail__category" href="/articles/category/<?= $article->category ?>"><?= $article->category ?></a>
+                    <h2 class="article-thumbnail__date"> <?= Carbon\Carbon::parse($article->date)->diffForHumans() ?> </h2>
                 </article>
             <?php endforeach ?>
         </div>
