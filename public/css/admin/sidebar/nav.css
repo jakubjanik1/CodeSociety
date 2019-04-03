@@ -1,0 +1,21 @@
+.sidebar__nav
+{
+    padding-top: 8px;
+}
+
+.nav__link
+{
+    padding: 8px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav__icon
+{
+    padding-right: 2px;
+}
+
+.nav__link:hover .nav__icon, .nav__link:hover
+{
+    color: var(--primary-green);
+}

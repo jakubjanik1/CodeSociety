@@ -1,0 +1,15 @@
+.home__title
+{
+    font-size: 32px;
+    padding-top: 32px;
+}
+
+.home__title::after
+{
+    content: "";
+    border-bottom: 2px solid var(--primary-green);
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 8px;
+}

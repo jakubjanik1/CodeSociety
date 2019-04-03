@@ -1,0 +1,23 @@
+.admin__sidebar
+{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-right: 2px solid #eaeaea;
+    padding: 16px 32px 8px 32px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 900px)
+{
+    .admin__sidebar
+    {
+        align-items: center;
+        height: auto;
+        width: 100%;
+        border-right: 0;
+        border-bottom: 2px solid #eaeaea;
+    }
+}
