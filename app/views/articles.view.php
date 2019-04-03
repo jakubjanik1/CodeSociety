@@ -22,7 +22,7 @@
                 <article class="list__article-thumbnail">
                     <p class="article-thumbnail__id"><?= $article->id ?></p>
                     <img class="article-thumbnail__image" src="data:image/png;base64, <?= base64_encode($article->image) ?> ">
-                    <h1 class="article-thumbnail__title"> <?= $article->title ?> </h1>
+                    <h2 class="article-thumbnail__title"> <?= $article->title ?> </h2>
                     <a class="article-thumbnail__category" href="/articles/category/<?= $article->category ?>"><?= $article->category ?></a>
                     <h2 class="article-thumbnail__date"> <?= Carbon\Carbon::parse($article->date)->diffForHumans() ?> </h2>
                 </article>

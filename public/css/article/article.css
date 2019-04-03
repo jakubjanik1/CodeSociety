@@ -17,7 +17,7 @@
 
 .article__title
 {
-    font-size: 40px;
+    font-size: 34px;
     text-align: center;
     margin-top: 16px;
     margin-bottom: 8px;
@@ -28,7 +28,7 @@
 {
     color: var(--primary-green);
     text-decoration: none;
-    font-size: 19px;
+    font-size: 18px;
     text-align: center;
     padding: 0 20px 0 20px;
 }
@@ -43,7 +43,7 @@
     white-space: pre-line;
     padding: 44px;
     text-align: justify;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 27px;
 }
 
@@ -52,7 +52,7 @@
 {
     .article
     {
-        margin: 8px;
+        margin: 16px 8px 16px 8px;
     }
 
     .article__content

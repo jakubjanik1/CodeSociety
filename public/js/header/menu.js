@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let path = location.pathname;
 
     for (let link of menuLinks) {
-        if (path.includes(link.innerText.trim().toLowerCase())) {
+        let regex = new RegExp(link.innerText.trim().toLowerCase() + '?');
+        if (path.match(regex)) {
             link.classList.add('menu__link--current');
         }
     }
