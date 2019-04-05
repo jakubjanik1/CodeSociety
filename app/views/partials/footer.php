@@ -1,5 +1,3 @@
-</main>
-
 <footer class="footer">
     <div class="footer__info">
         <img class="info__logo" src="/public/img/icon.png">

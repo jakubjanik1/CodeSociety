@@ -1,5 +1,5 @@
 <?php require 'partials/head.php' ?>
-    <div class="articles">
+    <main class="articles">
         <h1 class="articles__title">Articles</h1>
 
         <ul class="articles__categories">
@@ -39,5 +39,5 @@
 
             <button class="pagination__button pagination__button--next"> NEXT </button>
         </div>
-    </div>
+    </main>
 <?php require 'partials/footer.php' ?>

@@ -12,3 +12,4 @@ $router->get('articles/search/{searchTerm}/page/{page}', 'ArticlesController@sea
 $router->get('article/{id}', 'ArticlesController@article');
 
 $router->get('admin', 'AdminController@home');
+$router->get('admin/articles', 'AdminController@articles');

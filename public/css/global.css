@@ -28,3 +28,26 @@ h1::after
     margin: 0 auto;
     padding-bottom: 8px;
 }
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100%;
+    background: #fafafa;
+    padding-top: 46px;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+}
+
+a
+{
+    text-decoration: none;
+}

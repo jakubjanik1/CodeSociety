@@ -17,4 +17,11 @@ class AdminController
     {
         return view('admin/home');
     }
+
+    public function articles()
+    {
+        $articles = $this->repository->getAllArticles();
+
+        return view('admin/articles', ['articles' => $articles]);
+    }
 }

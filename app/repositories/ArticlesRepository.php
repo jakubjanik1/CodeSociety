@@ -23,6 +23,11 @@ class ArticlesRepository
         return $article;
     }
 
+    public function getAllArticles()
+    {
+        return $this->db->table('article')->get();
+    }
+
     public function getArticles($page, $category = null, $searchTerm = null)
     {
         $articles = $this->getFilteredArticles($category, $searchTerm);

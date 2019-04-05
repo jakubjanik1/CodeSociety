@@ -12,4 +12,3 @@
             </a>
         </ul>
     </aside>
-    <div class="admin__content">
