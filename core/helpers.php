@@ -7,6 +7,11 @@ function view($name, $data = [])
     require "app/views/$name.view.php";
 }
 
+function redirect($path)
+{
+    header("Location: /{$path}");
+}
+
 function includeMainStyles()
 {
     foreach (glob('public/css{/*,,/*/*}/*.css', GLOB_BRACE) as $file)

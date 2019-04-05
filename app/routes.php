@@ -13,3 +13,4 @@ $router->get('article/{id}', 'ArticlesController@article');
 
 $router->get('admin', 'AdminController@home');
 $router->get('admin/articles', 'AdminController@articles');
+$router->get('admin/article/delete/{id}', 'AdminController@deleteArticle');

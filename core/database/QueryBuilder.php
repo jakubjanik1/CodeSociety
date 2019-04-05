@@ -8,6 +8,7 @@ class QueryBuilder
 {
     private $pdo;
     private $table;
+    private $tableName;
 
     public function __construct($pdo) 
     {
@@ -16,6 +17,8 @@ class QueryBuilder
 
     public function table($name)
     {
+        $this->tableName = $name;
+
         $statement = $this->pdo->prepare("select * from {$name}");
 
         $statement->execute();
@@ -111,5 +114,15 @@ class QueryBuilder
     {
         $this->table = array_values($this->table);
         return $this->table[0] ?? null;
+    }
+
+    public function delete()
+    {
+        foreach ($this->table as $item)
+        {
+            $statement = $this->pdo->prepare("delete from {$this->tableName} where id = :id");
+
+            $statement->execute(['id' => $item->id]);
+        }
     }
 }

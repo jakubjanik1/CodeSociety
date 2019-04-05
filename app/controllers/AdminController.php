@@ -24,4 +24,11 @@ class AdminController
 
         return view('admin/articles', ['articles' => $articles]);
     }
+
+    public function deleteArticle($id)
+    {
+        $this->repository->deleteArticle($id);
+
+        return redirect('admin/articles');
+    }
 }

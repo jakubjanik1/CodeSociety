@@ -23,6 +23,13 @@ class ArticlesRepository
         return $article;
     }
 
+    public function deleteArticle($id)
+    {
+        $this->db->table('article')
+            ->where('id', $id)
+            ->delete();
+    }
+
     public function getAllArticles()
     {
         return $this->db->table('article')->get();
