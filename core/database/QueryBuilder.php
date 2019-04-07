@@ -128,6 +128,8 @@ class QueryBuilder
 
     public function insert($parameters)
     {
+        $parameters = (array)$parameters;
+
         $sql = sprintf(
             'insert into %s (%s) values (%s)',
             $this->tableName,
@@ -141,7 +143,9 @@ class QueryBuilder
 
     public function update($parameters)
     {
+        $parameters = (array)$parameters;
         $parameters = array_slice($parameters, 1);
+        
         foreach ($this->table as $item)
         {
             $bindList = array_map(function ($key) {

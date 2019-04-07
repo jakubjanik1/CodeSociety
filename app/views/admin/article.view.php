@@ -3,7 +3,7 @@
 <main class="admin__article">
     <h1 class="article__title"> Article </h1>
 
-    <form class="article__form" action="/admin/article/store" method="POST">
+    <form class="article__form" action="/admin/article/store" method="POST" autocomplete="off">
         <input type="hidden" name="id" value="<?= $article->id ?? '' ?>">
         
         <label class="form__label">

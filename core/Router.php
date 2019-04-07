@@ -36,7 +36,15 @@ class Router
             $routeParts = explode('/', $route);
             if ($route == $uri)
             {
-                $this->callAction(...explode('@', $controller));
+                if ($method == 'POST') 
+                {
+                    $this->callAction(explode('@', $controller)[0], explode('@', $controller)[1], [(object)$_POST]);
+                } 
+                else 
+                {
+                    $this->callAction(...explode('@', $controller));
+                }
+                
                 return;
             }
             else if (count($routeParts) == count($uriParts))

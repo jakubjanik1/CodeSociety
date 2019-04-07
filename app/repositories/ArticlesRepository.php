@@ -32,12 +32,12 @@ class ArticlesRepository
 
     public function storeArticle($article)
     {
-        $article['image'] = preg_replace('/data:image\/(png|jpeg|jpg);base64,/', '', $article['image']);
-        $article['image'] = base64_decode($article['image']);
+        $article->image = preg_replace('/data:image\/(png|jpeg|jpg);base64,/', '', $article->image);
+        $article->image = base64_decode($article->image);
 
-        if ($article['id'])
+        if ($article->id)
         {
-            $this->db->table('article')->where('id', $article['id'])->update($article);
+            $this->db->table('article')->where('id', $article->id)->update($article);
         }
         else 
         {

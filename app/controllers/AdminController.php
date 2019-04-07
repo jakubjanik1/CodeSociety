@@ -25,9 +25,9 @@ class AdminController
         return view('admin/article', ['article' => $article]);
     }
 
-    public function storeArticle()
+    public function storeArticle($article)
     {
-        $this->repository->storeArticle($_POST);
+        $this->repository->storeArticle($article);
 
         return redirect('admin/articles');
     }

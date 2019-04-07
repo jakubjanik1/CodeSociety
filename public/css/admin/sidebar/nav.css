@@ -15,7 +15,8 @@
     padding-right: 2px;
 }
 
-.nav__link:hover .nav__icon, .nav__link:hover
+.nav__link:hover .nav__icon, .nav__link:hover, 
+.nav__link--current .nav__icon, .nav__link--current
 {
     color: var(--primary-green);
 }
