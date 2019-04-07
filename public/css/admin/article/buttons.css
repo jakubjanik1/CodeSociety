@@ -1,0 +1,39 @@
+.form__buttons
+{
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.form__button
+{
+    padding: 9px;
+    margin: 16px;
+    border: 0;
+    border-radius: 4px;
+    width: 128px;
+    box-sizing: border-box;
+}
+
+.form__button--primary
+{
+    background: var(--primary-green);
+    color: #fff;
+}
+
+.form__button--primary:hover
+{
+    background: var(--hover-green);
+    cursor: pointer;
+}
+
+.form__button--secondary
+{
+    border: 1px solid;
+    text-align: center;
+}
+
+.form__button--secondary:hover
+{
+    color: var(--primary-green);
+}

@@ -14,3 +14,6 @@ $router->get('article/{id}', 'ArticlesController@article');
 $router->get('admin', 'AdminController@home');
 $router->get('admin/articles', 'AdminController@articles');
 $router->get('admin/article/delete/{id}', 'AdminController@deleteArticle');
+$router->get('admin/article/edit/{id}', 'AdminController@article');
+$router->get('admin/article/add', 'AdminController@article');
+$router->post('admin/article/store', 'AdminController@storeArticle');

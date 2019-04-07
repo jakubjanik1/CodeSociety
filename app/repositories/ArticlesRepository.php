@@ -30,6 +30,21 @@ class ArticlesRepository
             ->delete();
     }
 
+    public function storeArticle($article)
+    {
+        $article['image'] = preg_replace('/data:image\/(png|jpeg|jpg);base64,/', '', $article['image']);
+        $article['image'] = base64_decode($article['image']);
+
+        if ($article['id'])
+        {
+            $this->db->table('article')->where('id', $article['id'])->update($article);
+        }
+        else 
+        {
+            $this->db->table('article')->insert($article);
+        }
+    }
+
     public function getAllArticles()
     {
         return $this->db->table('article')->get();

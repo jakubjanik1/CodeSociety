@@ -3,6 +3,11 @@
 <main class="admin__articles">
     <h1 class="articles__title">Articles</h1>
 
+    <a class="articles__button" href="/admin/article/add">
+        <i class="button__icon material-icons"> add </i>
+        Add new
+    </a>
+
     <table class="articles__table">
         <tr class="table__row table__row--heading">
             <th class="table__cell table__cell--heading">#</th>

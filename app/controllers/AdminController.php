@@ -18,6 +18,20 @@ class AdminController
         return view('admin/home');
     }
 
+    public function article($id = null)
+    {
+        $article = $this->repository->getArticle($id);
+
+        return view('admin/article', ['article' => $article]);
+    }
+
+    public function storeArticle()
+    {
+        $this->repository->storeArticle($_POST);
+
+        return redirect('admin/articles');
+    }
+
     public function articles()
     {
         $articles = $this->repository->getAllArticles();

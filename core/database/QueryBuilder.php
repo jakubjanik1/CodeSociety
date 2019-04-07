@@ -125,4 +125,38 @@ class QueryBuilder
             $statement->execute(['id' => $item->id]);
         }
     }
+
+    public function insert($parameters)
+    {
+        $sql = sprintf(
+            'insert into %s (%s) values (%s)',
+            $this->tableName,
+            implode(', ', array_keys($parameters)),
+            ':' . implode(', :', array_keys($parameters))
+        );
+
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute($parameters);
+    }
+
+    public function update($parameters)
+    {
+        $parameters = array_slice($parameters, 1);
+        foreach ($this->table as $item)
+        {
+            $bindList = array_map(function ($key) {
+                return "{$key} = :{$key}";
+            }, array_keys($parameters));
+
+            $sql = sprintf(
+                'update %s set %s where id = %s',
+                $this->tableName,
+                implode(', ', $bindList),
+                $item->id
+            );
+
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute($parameters);
+        } 
+    }
 }
