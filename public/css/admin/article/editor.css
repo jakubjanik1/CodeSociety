@@ -1,0 +1,51 @@
+.form__editor
+{
+    border-radius: 0 0 4px 4px;
+}
+
+.ql-toolbar
+{
+    border: 0 !important;
+    margin-top: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.ql-syntax
+{
+    overflow: auto;
+    background: #23241f;
+    color: #f8f8f2;
+    border-radius: 4px;
+    padding: 16px !important;
+    font-size: 14px;
+    font-family: monospace;
+}
+
+.ql-syntax *
+{
+    font-size: 14px;
+    font-family: monospace;
+}
+
+.ql-snow button:hover .ql-stroke, .ql-snow .ql-active .ql-stroke, 
+.ql-picker-label:hover .ql-stroke, .ql-picker-item:hover .ql-stroke
+{
+    stroke: var(--primary-green) !important;
+}
+
+.ql-snow button:hover .ql-fill, .ql-snow .ql-active .ql-fill
+{
+    fill: var(--primary-green) !important;
+}
+
+.ql-snow button .ql-stroke, .ql-snow .ql-stroke, 
+.ql-picker-label .ql-stroke, .ql-picker-item .ql-stroke
+{
+    stroke: var(--text-color) !important;
+}
+
+.ql-snow button .ql-fill, .ql-snow .ql-fill
+{
+    fill: var(--text-color) !important;
+}

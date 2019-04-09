@@ -42,23 +42,51 @@
 .article__content
 {
     white-space: pre-line;
+    word-break: normal;
     padding: 44px;
-    text-align: justify;
-    font-size: 18px;
+    text-align: justify !important;
+    padding: 4px 40px !important;
     line-height: 27px;
 }
 
+.article__content img
+{
+    max-width: 100%;
+}
 
-@media screen and (max-width: 600px)
+.article__content *
+{
+    cursor: default !important;
+}
+
+.ql-syntax
+{
+    overflow: auto;
+    background: #23241f;
+    color: #f8f8f2;
+    border-radius: 4px;
+    padding: 16px !important;
+    font-size: 14px;
+    font-family: monospace;
+}
+
+.ql-syntax *
+{
+    font-size: 14px;
+    font-family: monospace;
+}
+
+@media screen and (max-width: 700px)
 {
     .article
     {
         margin: 16px 8px 16px 8px;
+        width: 95%;
     }
 
     .article__content
     {
-        padding: 50px 16px 32px 16px;
+        padding: 50px 16px 32px 16px !important;
     }
 
     .article__title, .article__category

@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Dosis', sans-serif;
-    font-weight: 500;
     font-size: 17px;
     color: var(--text-color);
     letter-spacing: 1px;
@@ -16,10 +15,22 @@
 
 h1
 {
-    font-size: 32px;
+    font-weight: 600;
+    font-size: 1.8em;
 }
 
-h1::after
+h1 *
+{
+    font-size: inherit;
+}
+
+main > h1
+{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+main > h1::after
 {
     content: "";
     border-bottom: 2px solid var(--primary-green);

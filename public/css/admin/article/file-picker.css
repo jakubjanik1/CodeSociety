@@ -5,11 +5,6 @@
     align-items: center;
 }
 
-.form__file-picker:hover
-{
-    cursor: pointer;
-}
-
 .file-picker__preview
 {
     max-height: 200px;
