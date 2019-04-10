@@ -9,12 +9,12 @@
     height: 325px;
     border: 1px solid #eaeaea;
     border-radius: 4px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: var(--primary-shadow);
 }
 
 .list__article-thumbnail:hover
 {
-    box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--hover-shadow);
     transition: box-shadow .3s;
     cursor: pointer;
 }

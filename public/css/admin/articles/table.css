@@ -3,8 +3,9 @@
     border-spacing: 0;
     margin-bottom: 46px;
     width: 80%;
+    max-width: 1000px;
     background: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: var(--primary-shadow);;
     border-radius: 4px;
 }
 
@@ -46,7 +47,7 @@
 }
 
 
-@media screen and (max-width: 1250px)
+@media screen and (max-width: 1400px)
 {
     .table__cell:nth-child(5)
     {
@@ -54,7 +55,7 @@
     }
 }
 
-@media screen and (max-width: 850px)
+@media screen and (max-width: 900px)
 {
     .table__cell:nth-child(4)
     {
@@ -62,7 +63,7 @@
     }
 }
 
-@media screen and (max-width: 650px)
+@media screen and (max-width: 700px)
 {
     .table__cell:nth-child(3)
     {

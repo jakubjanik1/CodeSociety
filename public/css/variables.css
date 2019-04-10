@@ -3,4 +3,6 @@
     --primary-green: #3dd07d;
     --hover-green: #2ebd6c;
     --text-color: #6d6d6d;
+    --primary-shadow: 0 0 12px #6d6d6d33;
+    --hover-shadow: 0 0 12px 4px #6d6d6d33;
 }

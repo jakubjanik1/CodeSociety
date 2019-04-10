@@ -11,7 +11,7 @@
     width: 36px;
     height: 36px;
     text-decoration: none;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: var(--primary-shadow);
     border-radius: 4px;
     align-items: center;
     box-sizing: content-box;
@@ -23,12 +23,12 @@
 {
     font-weight: bold;
     color: var(--primary-green);
-    box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--hover-shadow);
 }
 
 .pagination__link:hover
 {
-    box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--hover-shadow);
     transition: box-shadow .3s;
 }
 

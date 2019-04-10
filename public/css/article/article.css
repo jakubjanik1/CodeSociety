@@ -6,7 +6,7 @@
     align-self: center;
     background: #fff;
     margin: 40px 32px 46px 32px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: var(--primary-shadow);
     max-width: 1000px;
 }
 

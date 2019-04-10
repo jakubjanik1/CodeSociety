@@ -23,8 +23,8 @@
     margin-top: 8px;
     padding: 12px;
     border-radius: 4px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    border: 0 !important;
+    box-shadow: var(--primary-shadow);
+    border: 0;
     resize: vertical;
     background: #fff;
     font-weight: 500;
@@ -33,6 +33,18 @@
 
 .form__input:focus
 {
-    box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--hover-shadow);
     transition: box-shadow .3s;
+}
+
+.form__input--invalid
+{
+    box-shadow: 0 0 12px 4px #ff000033 !important;
+}
+
+.form__error
+{
+    margin-top: 10px;
+    color: #ff000099;
+    font-size: 16px;
 }

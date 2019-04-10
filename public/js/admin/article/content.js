@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    if (! location.pathname.match(/admin\/article\/(edit\/\d+|add)/)) {
+      return;
+    }
+
     let colors = ['#e60000', '#ff9900', '#ffff00', '#008a00', '#0066cc', 
       '#9933ff', '#ffffff', '#facccc', '#ffebcc', '#ffffcc', 
       '#cce8cc', '#cce0f5', '#ebd6ff', '#bbbbbb', '#f06666', 
