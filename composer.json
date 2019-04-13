@@ -1,4 +1,6 @@
 {
+    "name": "CodeSocety",
+    "description": "Blog about programming",
     "autoload": {
         "classmap": [
             "./"
@@ -8,6 +10,6 @@
         ]
     },
     "require": {
-        "nesbot/carbon": "^1.33"
+        "nesbot/carbon": "^2.16"
     }
 }
