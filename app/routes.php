@@ -17,3 +17,6 @@ $router->get('admin/article/delete/{id}', 'AdminController@deleteArticle');
 $router->get('admin/article/edit/{id}', 'AdminController@article');
 $router->get('admin/article/add', 'AdminController@article');
 $router->post('admin/article/store', 'AdminController@storeArticle');
+
+$router->get('admin/authenticate', 'AdminController@authenticate');
+$router->post('admin/authenticate', 'AdminController@authenticate');

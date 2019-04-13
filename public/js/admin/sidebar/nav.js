@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    navLinks[0].classList.add('nav__link--current');
+    navLinks[0] && navLinks[0].classList.add('nav__link--current');
 });

@@ -9,5 +9,9 @@ return [
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]
+    ],
+    'authentication' => [
+        'username' => 'admin', 
+        'password' => '54006cbe9019e539bdaa5cbcddd60e9c'
     ]
 ];
