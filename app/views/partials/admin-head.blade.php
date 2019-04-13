@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeSociety</title>
 
-    <?php includeAdminStyles() ?>
+    {{ includeAdminStyles() }}
 
     <link href="/public/css/global.css" rel="stylesheet">
     <link href="/public/css/variables.css" rel="stylesheet">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.quilljs.com/1.2.2/quill.snow.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-dark.min.css">
 
-    <?php includeAdminScripts() ?>
+    {{ includeAdminScripts() }}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script src="https://cdn.quilljs.com/1.2.2/quill.min.js"></script>

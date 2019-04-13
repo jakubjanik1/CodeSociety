@@ -1,4 +1,4 @@
-<?php require 'admin-head.php' ?>
+@include('partials/admin-head')
 
 <div class="admin">
     <aside class="admin__sidebar">

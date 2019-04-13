@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../partials/admin-head.php' ?>
+@include('partials/admin-head')
 
 <main class="admin__authentication">
     <h1 class="authentication__title">Admin</h1>
@@ -10,6 +10,6 @@
         <input class="form__input" name="password" type="password" placeholder="Password">
         <input class="form__button form__button--primary" type="submit" value="Login">
 
-        <span class="form__error"> <?= $error ?? '' ?> </span>
+        <span class="form__error"> {{ $error ?? '' }} </span>
     </form>
 </main>

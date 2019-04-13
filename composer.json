@@ -10,6 +10,7 @@
         ]
     },
     "require": {
-        "nesbot/carbon": "^2.16"
+        "nesbot/carbon": "^2.16",
+        "windwalker/edge": "~3.0"
     }
 }

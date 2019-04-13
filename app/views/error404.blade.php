@@ -1,4 +1,4 @@
-<?php require 'partials/head.php' ?>
+@include('partials/head')
 
 <div class="error404">
     <div class="error404__code">404</div>
@@ -6,4 +6,4 @@
     <a class="error404__button" href="/articles">Go Home</a>
 </div>
 
-<?php require 'partials/footer.php' ?>
+@include('partials/footer')

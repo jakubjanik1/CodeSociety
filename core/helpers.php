@@ -1,10 +1,12 @@
 <?php
 
+use Windwalker\Edge\Edge;
+use Windwalker\Edge\Loader\EdgeFileLoader;
+
 function view($name, $data = [])
 {
-    extract($data);
-
-    require "app/views/$name.view.php";
+    $edge = new Edge(new EdgeFileLoader(['app/views']));
+    echo $edge->render($name, $data);
 }
 
 function redirect($path)
