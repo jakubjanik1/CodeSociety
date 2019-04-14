@@ -35,6 +35,19 @@
     cursor: pointer;
 }
 
+.newsletter__error
+{
+    margin-top: 10px;
+    color: #ff000099;
+}
+
+.newsletter__result
+{
+    font-weight: 600;
+    font-size: 19px;
+    color: var(--primary-green);
+}
+
 
 @media screen and (max-width: 950px)
 {

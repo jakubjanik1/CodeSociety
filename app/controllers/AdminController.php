@@ -3,7 +3,7 @@
 namespace Controllers;
 
 use Repositories\ArticlesRepository;
-use Controllers\Helpers\AdminAuth;
+use Services\AdminAuth;
 
 class AdminController
 {

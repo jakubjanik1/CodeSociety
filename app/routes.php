@@ -20,3 +20,5 @@ $router->post('admin/article/store', 'AdminController@storeArticle');
 
 $router->get('admin/authenticate', 'AdminController@authenticate');
 $router->post('admin/authenticate', 'AdminController@authenticate');
+
+$router->post('newsletter/subscribe', 'NewsletterController@subscribe');

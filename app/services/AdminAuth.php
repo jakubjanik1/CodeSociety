@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers\Helpers;
+namespace Services;
 
 use Core\{App, Session};
 

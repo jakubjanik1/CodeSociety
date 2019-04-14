@@ -45,7 +45,7 @@
     word-break: normal;
     padding: 44px;
     text-align: justify !important;
-    padding: 4px 40px !important;
+    padding: 32px 40px !important;
     line-height: 27px;
 }
 
@@ -76,7 +76,7 @@
     font-family: monospace;
 }
 
-@media screen and (max-width: 700px)
+@media screen and (max-width: 900px)
 {
     .article
     {

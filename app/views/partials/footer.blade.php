@@ -25,7 +25,7 @@
             Subscribe to our email list and stay up&#8209;to&#8209;date
             with all our awesome articles and latest updates
         </div>
-        <input class="newsletter__input" type="text" placeholder="Type your email">
+        <input class="newsletter__input" type="email" placeholder="Type your email" spellcheck="false" required>
         <button class="newsletter__button">Subscribe</button>
     </div>
 </footer>

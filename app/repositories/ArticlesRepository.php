@@ -3,20 +3,21 @@
 namespace Repositories;
 
 use Core\App;
+use Services\Newsletter;
 
 class ArticlesRepository
 {
-    private $db;
+    private $articles;
     const PAGE_SIZE = 15;
 
     public function __construct()
     {
-        $this->db = App::get('database');
+        $this->articles = App::get('database')->table('article');
     }
 
     public function getArticle($id)
     {
-        $article = $this->db->table('article')
+        $article = $this->articles
             ->where('id', $id)
             ->first();
 
@@ -25,7 +26,7 @@ class ArticlesRepository
 
     public function deleteArticle($id)
     {
-        $this->db->table('article')
+        $this->articles
             ->where('id', $id)
             ->delete();
     }
@@ -37,17 +38,25 @@ class ArticlesRepository
 
         if ($article->id)
         {
-            $this->db->table('article')->where('id', $article->id)->update($article);
+            $this->articles->where('id', $article->id)->update($article);
         }
         else 
         {
-            $this->db->table('article')->insert($article);
+            $this->articles->insert($article);
+
+            Newsletter::sendMails(Newsletter::getSubscribers(),
+                "$article->title - it is our new article from category $article->category!", 
+                '<h1>Welcome!!!</h1>
+                Have you seen our latest article! If no as soon as possible check it and
+                improve a lot your coding skill. We hope that you will enjoy it. Have a
+                nice day and happy coding!'
+            );
         }
     }
 
     public function getAllArticles()
     {
-        return $this->db->table('article')->get();
+        return $this->articles->get();
     }
 
     public function getArticles($page, $category = null, $searchTerm = null)
@@ -71,7 +80,7 @@ class ArticlesRepository
 
     public function getCategories()
     {
-        $articles = $this->db->table('article');
+        $articles = $this->articles;
 
         return $articles->value('category')
             ->distinct()
@@ -80,7 +89,7 @@ class ArticlesRepository
 
     private function getFilteredArticles($category, $searchTerm = null)
     {
-        $articles = $this->db->table('article');
+        $articles = $this->articles;
 
         $articles = $category ? $articles->where('category', $category) : $articles;
 
