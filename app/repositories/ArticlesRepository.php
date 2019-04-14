@@ -80,7 +80,7 @@ class ArticlesRepository
 
     public function getCategories()
     {
-        $articles = $this->articles;
+        $articles = clone $this->articles;
 
         return $articles->value('category')
             ->distinct()
@@ -89,7 +89,7 @@ class ArticlesRepository
 
     private function getFilteredArticles($category, $searchTerm = null)
     {
-        $articles = $this->articles;
+        $articles = clone $this->articles;
 
         $articles = $category ? $articles->where('category', $category) : $articles;
 
