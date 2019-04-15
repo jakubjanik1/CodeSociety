@@ -32,7 +32,7 @@ function removeError(element) {
 
 function addSubscriber(email) {
     let http = new XMLHttpRequest();
-    http.open('POST', `newsletter/subscribe`, true);
+    http.open('POST', `/newsletter/subscribe`, true);
     http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     http.send(`email=${email}`);
 }

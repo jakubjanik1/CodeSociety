@@ -16,6 +16,8 @@
     width: 128px;
     border: 0;
     border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .items__button--primary

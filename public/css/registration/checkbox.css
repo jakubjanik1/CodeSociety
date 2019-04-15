@@ -1,0 +1,69 @@
+label.form__label
+{
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    display: block;
+    margin: 32px 0 70px 0;
+}
+
+.form__text
+{
+    position: absolute;
+    padding-left: 35px;
+    top: 2px;
+}
+
+.form__checkbox
+{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.form__checkmark
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background: #fff;
+    box-shadow: var(--primary-shadow);
+    border-radius: 4px;
+}
+
+.form__label:hover .form__checkmark
+{
+    box-shadow: var(--hover-shadow);
+}
+
+.form__label .form__checkbox:checked ~ .form__checkmark
+{
+    background: var(--primary-green);
+}
+
+.form__checkmark::after
+{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.form__label .form__checkbox:checked ~ .form__checkmark::after
+{
+    display: block;
+}
+
+.form__label .form__checkmark::after
+{
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}

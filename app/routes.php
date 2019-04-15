@@ -22,3 +22,6 @@ $router->get('admin/authenticate', 'AdminController@authenticate');
 $router->post('admin/authenticate', 'AdminController@authenticate');
 
 $router->post('newsletter/subscribe', 'NewsletterController@subscribe');
+
+$router->get('account/register', 'AccountController@register');
+$router->post('account/register', 'AccountController@register');

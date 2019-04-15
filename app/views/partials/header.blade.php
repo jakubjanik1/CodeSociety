@@ -21,8 +21,8 @@
     </div>
 
     <div class="header__items">
-        <button class="items__button items__button--secondary">Login</button>
-        <button class="items__button items__button--primary">Register</button>
+        <a class="items__button items__button--secondary" href="/account/login">Login</a>
+        <a class="items__button items__button--primary" href="/account/register">Register</a>
     </div>
 
     <button class="header__toggle">

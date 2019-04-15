@@ -13,11 +13,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="https://cdn.quilljs.com/1.2.2/quill.snow.css">
     <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.core.css">
+    <link rel="stylesheet" href="/public/css/admin/article/form.css">
+    <link rel="stylesheet" href="/public/css/admin/article/file-picker.css">
+    <link rel="stylesheet" href="/public/css/admin/article/buttons.css">
 
     {{ includeMainScripts() }}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script src="https://cdn.quilljs.com/1.2.2/quill.min.js"></script>
+    <script src="/public/js/admin/article/file-picker.js"></script>
 
 </head>
 <body>

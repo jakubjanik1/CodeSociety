@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         reader.readAsDataURL(this.files[0]);
 
         reader.onload = function() {
-            document.querySelector('.article__form').elements['image'].value = reader.result;
+            document.querySelector('form').elements['image'].value = reader.result;
             preview.src = reader.result;
         }
     });
