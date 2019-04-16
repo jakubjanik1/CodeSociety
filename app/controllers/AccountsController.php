@@ -23,4 +23,9 @@ class AccountController
             return view('account/registration');
         }
     }
+
+    public function loginExists($request)
+    {
+        echo $this->repository->loginExists($request->login);
+    }
 }

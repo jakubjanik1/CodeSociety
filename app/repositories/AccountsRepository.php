@@ -22,4 +22,9 @@ class AccountsRepository
 
         $this->accounts->insert($account);
     }
+
+    public function loginExists($login)
+    {
+        return $this->accounts->where('login', $login)->get() != null;
+    }
 }
