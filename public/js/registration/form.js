@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let newsletter = form.querySelector('.form__checkbox');
     form.addEventListener('submit', function() {
-        document.querySelectorAll('input').forEach(x => x.focus());
+        form.querySelectorAll('input').forEach(x => x.focus());
         
         if (document.querySelectorAll('.form__error').length) {
             event.preventDefault();
@@ -135,7 +135,7 @@ function validateLogin(form) {
 }
 
 function validatePassword(form) {
-    let password = form.querySelector('[name=password]');
+    let [password, repeatedPassword] = form.querySelectorAll('[type=password]');
     password.addEventListener('input', function() {
         if (this.value.length > 30) {
             addError(this, 'Password cannot be longer than 30!')
@@ -147,6 +147,8 @@ function validatePassword(form) {
     password.addEventListener('focusout', function() {
         if (! this.value) {
             addError(this, 'You must enter password!')
+        } else if (this.value != repeatedPassword.value && repeatedPassword.value) {
+            addError(repeatedPassword, 'Passwords do not match!')
         }
     });
 
@@ -161,7 +163,7 @@ function validateRepeatedPassword(form) {
     repeatedPassword.addEventListener('focusout', function() {
         if (! this.value) {
             addError(this, 'You must repeat password!')
-        } else if (this.value != password.value) {
+        } else if (this.value != password.value && password.value) {
             addError(this, 'Passwords do not match!')
         }
     });
