@@ -21,8 +21,17 @@
     </div>
 
     <div class="header__items">
-        <a class="items__button items__button--secondary" href="/account/login">Login</a>
-        <a class="items__button items__button--primary" href="/account/register">Register</a>
+        @php $account = Core\Session::get('account') @endphp
+        @if (Core\Session::get('logged_in'))
+            <img class="items__account-image" src="{{ $account->image ? 'data:image/png;base64,' . base64_encode($account->image) : '/public/img/account.png' }}">
+            <div class="items__account-login">{{ $account->login }}</div>
+            <a class="items__account-logout" href="/account/logout" title="Logout">
+                <i class="items__account-logout-icon material-icons"> power_settings_new </i>
+            </a>
+        @else
+            <a class="items__button items__button--secondary" href="/account/login">Login</a>
+            <a class="items__button items__button--primary" href="/account/register">Register</a>
+        @endif
     </div>
 
     <button class="header__toggle">

@@ -14,6 +14,11 @@ function redirect($path)
     header("Location: /{$path}");
 }
 
+function redirectBack()
+{
+    header("Location: {$_SERVER['HTTP_REFERER']}");
+}
+
 function includeMainStyles()
 {
     foreach (glob('public/css{/*,,/*/*}/*.css', GLOB_BRACE) as $file)

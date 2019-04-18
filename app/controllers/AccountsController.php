@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Repositories\AccountsRepository;
+use Services\AccountAuth;
 
 class AccountController
 {
@@ -16,12 +17,37 @@ class AccountController
         if ($account)
         {
             $this->repository->addAccount($account);
-            return redirect('articles');
+            return redirect('account/login');
         }
         else
         {
             return view('account/registration');
         }
+    }
+
+    public function login($account = null)
+    {
+        if ($account)
+        {
+            if (AccountAuth::authenticate($account))
+            {
+                return redirect('articles');
+            }
+            else
+            {
+                return view('account/login', ['error' => 'Incorrect login or password!']);
+            }
+        }
+        else
+        {
+            return view('account/login');
+        }
+    }
+
+    public function logout()
+    {
+        AccountAuth::logout();
+        return redirectBack();
     }
 
     public function loginExists($request)

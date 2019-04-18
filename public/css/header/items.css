@@ -1,11 +1,12 @@
 .header__items
 {
     display: flex;
+    align-items: center;
     margin-right: 150px;
     margin-left: 32px;
 }
 
-.header__items > :last-child
+.header__items > :last-child:not(.items__account-logout)
 {
     margin-left: 32px;
 }
@@ -43,6 +44,34 @@
 {
     color: var(--primary-green);
     cursor: pointer;
+}
+
+.items__account-image
+{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.items__account-login
+{
+    margin-left: 10px;
+}
+
+.items__account-logout
+{
+    height: 21px;
+    margin-left: 16px;
+}
+
+.items__account-logout-icon
+{
+    font-size: 22px !important;
+}
+
+.items__account-logout-icon:hover
+{
+    color: var(--primary-green);
 }
 
 

@@ -1,0 +1,13 @@
+.login__form
+{
+    width: 80%;
+    max-width: 400px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.login__form .form__error
+{
+    text-align: center;
+    font-size: 17px;
+}

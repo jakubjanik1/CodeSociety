@@ -26,3 +26,8 @@ $router->post('newsletter/subscribe', 'NewsletterController@subscribe');
 $router->get('account/register', 'AccountController@register');
 $router->post('account/register', 'AccountController@register');
 $router->post('account/login/exists', 'AccountController@loginExists');
+
+$router->get('account/login', 'AccountController@login');
+$router->post('account/login', 'AccountController@login');
+
+$router->get('account/logout', 'AccountController@logout');

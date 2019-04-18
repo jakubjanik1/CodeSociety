@@ -23,6 +23,13 @@ class AccountsRepository
         $this->accounts->insert($account);
     }
 
+    public function getAccount($account)
+    {
+        return $this->accounts->where('login', $account->login)
+            ->where('password', $account->password)
+            ->first();
+    }
+
     public function loginExists($login)
     {
         return $this->accounts->where('login', $login)->get() != null;
