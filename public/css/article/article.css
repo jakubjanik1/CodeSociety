@@ -10,6 +10,11 @@
     max-width: 1000px;
 }
 
+.article__id
+{
+    display: none;
+}
+
 .article__image
 {
     width: 100%;

@@ -10,6 +10,7 @@ $router->get('articles/search/{searchTerm}', 'ArticlesController@search');
 $router->get('articles/search/{searchTerm}/page/{page}', 'ArticlesController@search');
 
 $router->get('article/{id}', 'ArticlesController@article');
+$router->get('article/{id}/like', 'ArticlesController@likeArticle');
 
 $router->get('admin', 'AdminController@home');
 $router->get('admin/articles', 'AdminController@articles');
@@ -23,11 +24,11 @@ $router->post('admin/authenticate', 'AdminController@authenticate');
 
 $router->post('newsletter/subscribe', 'NewsletterController@subscribe');
 
-$router->get('account/register', 'AccountController@register');
-$router->post('account/register', 'AccountController@register');
-$router->post('account/login/exists', 'AccountController@loginExists');
+$router->get('account/register', 'AccountsController@register');
+$router->post('account/register', 'AccountsController@register');
+$router->post('account/login/exists', 'AccountsController@loginExists');
 
-$router->get('account/login', 'AccountController@login');
-$router->post('account/login', 'AccountController@login');
+$router->get('account/login', 'AccountsController@login');
+$router->post('account/login', 'AccountsController@login');
 
-$router->get('account/logout', 'AccountController@logout');
+$router->get('account/logout', 'AccountsController@logout');

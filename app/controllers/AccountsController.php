@@ -5,8 +5,10 @@ namespace Controllers;
 use Repositories\AccountsRepository;
 use Services\AccountAuth;
 
-class AccountController
+class AccountsController
 {
+    private $repository;
+
     public function __construct()
     {
         $this->repository = new AccountsRepository();

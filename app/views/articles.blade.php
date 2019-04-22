@@ -22,10 +22,20 @@
         @foreach ($articles as $article)  
             <div class="list__article-thumbnail">
                 <p class="article-thumbnail__id">{{ $article->id }}</p>
+
                 <img class="article-thumbnail__image" src="data:image/png;base64,{{ base64_encode($article->image) }}">
+
                 <div class="article-thumbnail__title">{{ $article->title }}</div>
+
                 <a class="article-thumbnail__category" href="/articles/category/{{ $article->category }}">{{ $article->category }}</a>
+
                 <div class="article-thumbnail__date">{{ Carbon\Carbon::parse($article->date)->diffForHumans() }}</div>
+
+                <div class="article-thumbnail__likes"> 
+                    <i class="likes__icon {{ in_array($article->id, $accountLikes) ? 'likes__icon--active fas' : 'far' }} fa-heart"></i>
+
+                    <div class="likes__count"> {{ $article->likes }} </div>
+                </div>
             </div>
         @endforeach
     </div>

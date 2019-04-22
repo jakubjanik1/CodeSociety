@@ -1,0 +1,25 @@
+.article__likes
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.article__likes .likes__icon
+{
+    font-size: 32px;
+    padding-top: 16px;
+    align-self: center;
+}
+
+.likes__icon:hover
+{
+    color: var(--primary-green);
+    cursor: pointer;
+}
+
+.article__likes .likes__count
+{
+    font-size: 16px;
+    padding-top: 2px;
+    align-self: center;
+}

@@ -4,20 +4,21 @@ namespace Repositories;
 
 use Core\App;
 use Services\Newsletter;
+use Core\Session;
 
 class ArticlesRepository
 {
-    private $articles;
+    private $db;
     const PAGE_SIZE = 15;
 
     public function __construct()
     {
-        $this->articles = App::get('database')->table('article');
+        $this->db = App::get('database');
     }
 
     public function getArticle($id)
     {
-        $article = $this->articles
+        $article = $this->db->table('article')
             ->where('id', $id)
             ->first();
 
@@ -26,7 +27,7 @@ class ArticlesRepository
 
     public function deleteArticle($id)
     {
-        $this->articles
+        $this->db->table('article')
             ->where('id', $id)
             ->delete();
     }
@@ -38,11 +39,11 @@ class ArticlesRepository
 
         if ($article->id)
         {
-            $this->articles->where('id', $article->id)->update($article);
+            $this->db->table('article')->where('id', $article->id)->update($article);
         }
         else 
         {
-            $this->articles->insert($article);
+            $this->db->table('article')->insert($article);
 
             Newsletter::sendMails(Newsletter::getSubscribers(),
                 "$article->title - it is our new article from category $article->category!", 
@@ -56,7 +57,7 @@ class ArticlesRepository
 
     public function getAllArticles()
     {
-        return $this->articles->get();
+        return $this->db->table('article')->get();
     }
 
     public function getArticles($page, $category = null, $searchTerm = null)
@@ -80,16 +81,66 @@ class ArticlesRepository
 
     public function getCategories()
     {
-        $articles = clone $this->articles;
-
-        return $articles->value('category')
+        return $this->db->table('article')->value('category')
             ->distinct()
             ->get();
     }
 
+    public function articleIsLiked($articleId, $accountId)
+    {
+        return $this->db->table('like')
+            ->where('article_id', $articleId)
+            ->where('account_id', $accountId)
+            ->get() != null;
+    }
+
+    public function addLike($articleId, $accountId)
+    {
+        $this->db->table('like')
+            ->insert(['article_id' => $articleId, 'account_id' => $accountId]);
+
+        $likes = $this->db->table('like')
+            ->where('article_id', $articleId)
+            ->count();
+
+        $this->db->table('article')
+            ->where('id', $articleId)
+            ->update(['likes' => $likes]);
+    }
+
+    public function removeLike($articleId, $accountId)
+    {
+        $this->db->table('like')
+            ->where('article_id', $articleId)
+            ->where('account_id', $accountId)
+            ->delete();
+
+        $likes = $this->db->table('like')
+            ->where('article_id', $articleId)
+            ->count(); 
+
+        $this->db->table('article')
+            ->where('id', $articleId)
+            ->update(['likes' => $likes]);
+    }
+
+    public function getAccountLikes()
+    {
+        if (! Session::get('logged_in')) return [];
+
+        $accountId = Session::get('account')->id;
+
+        $result = $this->db->table('like')
+            ->where('account_id', $accountId)
+            ->select('article_id')
+            ->get();
+
+        return array_column($result, 'article_id');
+    }
+
     private function getFilteredArticles($category, $searchTerm = null)
     {
-        $articles = clone $this->articles;
+        $articles = $this->db->table('article');
 
         $articles = $category ? $articles->where('category', $category) : $articles;
 
