@@ -15,9 +15,6 @@ class AccountsRepository
 
     public function addAccount($account)
     {
-        $account->image = preg_replace('/data:image\/(png|jpeg|jpg);base64,/', '', $account->image);
-        $account->image = base64_decode($account->image);
-
         $account->password = hash('ripemd128', $account->password);
 
         $this->accounts->insert($account);

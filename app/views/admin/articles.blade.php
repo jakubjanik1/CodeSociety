@@ -23,7 +23,7 @@
                 <td class="table__cell">{{ $article->id }}</td>
                 <td class="table__cell">{{ $article->title }}</td>
                 <td class="table__cell"> 
-                    <img class="cell__image" src="data:image/png;base64,{{ base64_encode($article->image) }}">
+                    <img class="cell__image" src="{{ $article->image }}">
                 </td>
                 <td class="table__cell">{{ $article->category }}</td>
                 <td class="table__cell">{{ date('M d, Y', strtotime($article->date)) }}</td>

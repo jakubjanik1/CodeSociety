@@ -2,7 +2,7 @@
 
 <div class="article">
     <p class="article__id">{{ $article->id }}</p>
-    <img class="article__image" src="data:image/png;base64,{{ base64_encode($article->image) }}">
+    <img class="article__image" src="{{ $article->image }}">
     <div class="article__title">{{ $article->title }}</div>
     <a class="article__category" href="/articles/category/{{ $article->category }}">{{ $article->category }}</a>
 

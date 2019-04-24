@@ -23,7 +23,7 @@
             <div class="list__article-thumbnail">
                 <p class="article-thumbnail__id">{{ $article->id }}</p>
 
-                <img class="article-thumbnail__image" src="data:image/png;base64,{{ base64_encode($article->image) }}">
+                <img class="article-thumbnail__image" src="{{ $article->image }}">
 
                 <div class="article-thumbnail__title">{{ $article->title }}</div>
 

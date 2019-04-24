@@ -19,8 +19,8 @@
         <div class="form__label">
             Image
             <div class="form__input form__file-picker">
-                <input name="image" type="hidden" value="{{ base64_encode($article->image ?? '') }}">
-                <img class="file-picker__preview" src="{{ $article ? 'data:image/png;base64,' . base64_encode($article->image) : '/public/img/upload.png' }}">
+                <input name="image" type="hidden" value="{{ $article->image ?? '' }}">
+                <img class="file-picker__preview" src="{{ $article ? $article->image : '/public/img/upload.png' }}">
                 <input class="file-picker__browse" type="file" accept="image/*">
             </div>
         </div>
