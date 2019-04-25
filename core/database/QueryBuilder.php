@@ -163,4 +163,24 @@ class QueryBuilder
             $statement->execute($parameters);
         } 
     }
+
+    public function join($table, $field1, $field2)
+    {
+        $table = $this->pdo->query("select * from {$table}")->fetchAll(PDO::FETCH_CLASS);
+
+        $out = [];
+        foreach ($this->table as $row1)
+        {
+            foreach ($table as $row2) 
+            {
+                if ($row1->$field1 == $row2->$field2)
+                {
+                    $out[] = (object) array_merge((array) $row1, (array) $row2);
+                }
+            }
+        }
+        
+        $this->table = $out;
+        return $this;
+    }
 }

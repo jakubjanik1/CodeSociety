@@ -13,4 +13,8 @@
     <div class="article__content ql-editor">{!! $article->content !!}</div>
 </div>
 
+<div class="comments">
+    <h1 class="comments__title"></h1>
+</div>
+
 @include('partials/footer')

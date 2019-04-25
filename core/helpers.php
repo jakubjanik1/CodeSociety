@@ -19,6 +19,12 @@ function redirectBack()
     header("Location: {$_SERVER['HTTP_REFERER']}");
 }
 
+function json($data)
+{
+    header('Content-Type: application/json');
+    echo json_encode($data);
+}
+
 function includeMainStyles()
 {
     foreach (glob('public/css{/*,,/*/*}/*.css', GLOB_BRACE) as $file)

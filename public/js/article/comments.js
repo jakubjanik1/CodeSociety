@@ -1,0 +1,50 @@
+document.addEventListener('DOMContentLoaded', function() {
+    if (! /article\/\d+/.test(location.pathname)) return;
+
+    let articleId = location.pathname.split('/').pop();
+    fetch(`/article/${articleId}/comments`)
+        .then(res => res.json())
+        .then(json => displayComments(json));
+});
+
+function displayComments(comments) {
+    let commentsContainer = document.querySelector('.comments');
+    
+    let title = commentsContainer.querySelector('.comments__title');
+    title.innerHTML = `${comments.length} Comments`;
+
+    for (let comment of comments) {
+        commentsContainer.append(createComment(comment));
+    }
+}
+
+function createComment(comment) {
+    let commentElem = document.createElement('div');
+    commentElem.classList.add('comments__comment');
+
+    let image = document.createElement('img');
+    image.classList.add('comment__image');
+    image.src = comment.image;
+
+    let commentInfo = document.createElement('div');
+    commentInfo.classList.add('comment__info');
+    commentElem.append(commentInfo);
+
+    let author = document.createElement('span');
+    author.classList.add('comment__author');
+    author.innerText = comment.login;
+
+    let date = document.createElement('span');
+    date.classList.add('comment__date');
+    date.innerText = moment(comment.written).fromNow();
+
+    commentInfo.append(author, date);
+
+    let content = document.createElement('div');
+    content.classList.add('comment__content');
+    content.innerHTML = comment.content;
+
+    commentElem.append(image, content);
+
+    return commentElem;
+}
