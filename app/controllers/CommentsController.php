@@ -19,4 +19,11 @@ class CommentsController
 
         return json($comments);
     }   
+
+    public function storeComment($request)
+    {
+        $comment = $this->repository->storeComment($request);
+
+        return json($comment);
+    }
 }

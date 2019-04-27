@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (! /article\/\d+/.test(location.pathname)) return;
 
     let articleId = location.pathname.split('/').pop();
-    fetch(`/article/${articleId}/comments`)
+    fetch(`/comments/article/${articleId}`)
         .then(res => res.json())
-        .then(json => displayComments(json));
+        .then(comments => displayComments(comments));
 });
 
 function displayComments(comments) {
@@ -40,7 +40,7 @@ function createComment(comment) {
 
     commentInfo.append(author, date);
 
-    let content = document.createElement('div');
+    let content = document.createElement('pre');
     content.classList.add('comment__content');
     content.innerHTML = comment.content;
 
