@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let button = document.querySelector('.add__button');
     button.addEventListener('click', function() {
+        if (content.innerText == '') {
+            content.setAttribute('placeholder', 'You must write sth!!!');
+            return;
+        }
+
         let formData = new FormData();
         formData.append('content', content.innerText);
         formData.append('article_id', location.pathname.match(/\d+$/).pop());
