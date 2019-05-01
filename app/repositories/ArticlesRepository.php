@@ -5,6 +5,7 @@ namespace Repositories;
 use Core\App;
 use Services\Newsletter;
 use Core\Session;
+use Tamtamchik\SimpleFlash\Flash;
 
 class ArticlesRepository
 {
@@ -27,20 +28,47 @@ class ArticlesRepository
 
     public function deleteArticle($id)
     {
-        $this->db->table('article')
+        $result = $this->db->table('article')
             ->where('id', $id)
             ->delete();
+
+        if ($result) 
+        {
+            Flash::success('Article deleted successfully!');
+        } 
+        else 
+        {
+            Flash::error('Sorry, article deletion failed!');
+        }
     }
 
     public function storeArticle($article)
     {
         if ($article->id)
         {
-            $this->db->table('article')->where('id', $article->id)->update($article);
+            $result = $this->db->table('article')->where('id', $article->id)->update($article);
+
+            if ($result) 
+            {
+                Flash::success('Article updated successfully!');
+            } 
+            else 
+            {
+                Flash::error('Sorry, article update failed!');
+            }
         }
         else 
         {
-            $this->db->table('article')->insert($article);
+            $result = $this->db->table('article')->insert($article);
+
+            if ($result) 
+            {
+                Flash::success('Article added successfully!');
+            } 
+            else 
+            {
+                Flash::error('Sorry, article addition failed!');
+            }
 
             Newsletter::sendMails(Newsletter::getSubscribers(),
                 "$article->title - it is our new article from category $article->category!", 

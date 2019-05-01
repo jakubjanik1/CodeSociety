@@ -1,0 +1,34 @@
+.flash
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 16px;
+    padding: 24px 12px 24px 24px;
+    right: 16px;
+    border-radius: 4px;
+    width: 256px;
+    opacity: .9;
+}
+
+.flash__message, .flash__close
+{
+    color: #fff;
+}
+
+.flash__close:hover
+{
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.flash--success
+{
+    background: var(--primary-green);
+}
+
+.flash--error
+{
+    background: #ff7979;
+}

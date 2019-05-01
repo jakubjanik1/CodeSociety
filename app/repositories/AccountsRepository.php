@@ -3,6 +3,7 @@
 namespace Repositories;
 
 use Core\App;
+use Tamtamchik\SimpleFlash\Flash;
 
 class AccountsRepository
 {
@@ -17,7 +18,16 @@ class AccountsRepository
     {
         $account->password = hash('ripemd128', $account->password);
 
-        $this->accounts->insert($account);
+        $result = $this->accounts->insert($account);
+
+        if ($result)
+        {
+            Flash::success('Account registered successfully!');
+        }
+        else
+        {
+            Flash::error('Sorry, registration failed!');
+        }
     }
 
     public function getAccount($account)

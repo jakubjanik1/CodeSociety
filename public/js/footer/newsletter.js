@@ -4,18 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     subscribe.addEventListener('click', function() {
         if (email.validity.valid) {
-            removeError(this.parentElement);
+            removeErrorMessage(this.parentElement);
 
             addSubscriber(email.value);
             
             showResult(this, 'Thank you for subscribe!');
         } else {
-            addError(this.parentElement, 'It is not correct email!');
+            addErrorMessage(this.parentElement, 'It is not correct email!');
         }
     });
 });
 
-function addError(element, message) {
+function addErrorMessage(element, message) {
     if (! element.querySelector('.newsletter__error')) {
         let error = document.createElement('div');
         error.classList.add('newsletter__error');
@@ -25,7 +25,7 @@ function addError(element, message) {
     }
 }
 
-function removeError(element) {
+function removeErrorMessage(element) {
     let error = element.querySelector('.newsletter__error');
     error && error.remove();
 }

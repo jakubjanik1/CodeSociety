@@ -122,8 +122,10 @@ class QueryBuilder
         {
             $statement = $this->pdo->prepare("delete from `{$this->tableName}` where id = :id");
 
-            $statement->execute(['id' => $item->id]);
+            $result = $statement->execute(['id' => $item->id]);
         }
+
+        return $result;
     }
 
     public function insert($parameters)
@@ -138,7 +140,7 @@ class QueryBuilder
         );
 
         $statement = $this->pdo->prepare($sql);
-        $statement->execute($parameters);
+        return $statement->execute($parameters);
     }
 
     public function update($parameters)
@@ -160,7 +162,7 @@ class QueryBuilder
             );
 
             $statement = $this->pdo->prepare($sql);
-            $statement->execute($parameters);
+            return $statement->execute($parameters);
         } 
     }
 
