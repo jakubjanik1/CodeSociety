@@ -1,0 +1,61 @@
+.confirm
+{
+    box-shadow: var(--primary-shadow);
+    top: -8px;
+    left: -168px;
+    position: absolute;
+    padding: 12px 16px 16px 16px;
+    background: #fff;
+    z-index: 100;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.confirm::after
+{
+    content: "";
+	position: absolute;
+	top: 42%;
+	right: -8px;
+	transform: rotate(135deg);
+	box-shadow: -10px -10px 25px #6d6d6d33;
+	border: 8px solid;
+	border-color: #fff transparent transparent #fff;
+}
+
+.confirm__message
+{
+    margin-bottom: 8px;
+}
+
+.confirm__button
+{
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.confirm__button--delete
+{
+    background: var(--primary-green);
+    color: #fff;
+}
+
+.confirm__button--delete:hover
+{
+    background: var(--hover-green);
+}
+
+.confirm__button--cancel
+{
+    background: #fff;
+    border: 1px solid;
+    margin-left: 12px;
+    padding: 5px;
+}
+
+.confirm__button--cancel:hover
+{
+    cursor: pointer;
+    color: var(--primary-green);
+}

@@ -16,6 +16,7 @@
 
 .table__cell
 {
+    position: relative;
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #eaeaea;
@@ -29,6 +30,12 @@
     border-top: 1px solid #eaeaea;
 }
 
+.cell__link
+{
+    border: 0;
+    background: transparent;
+}
+
 .cell__icon
 {
     color: var(--primary-green);
@@ -36,6 +43,7 @@
 
 .cell__icon:hover
 {
+    cursor: pointer;
     color: var(--hover-green);
 }
 

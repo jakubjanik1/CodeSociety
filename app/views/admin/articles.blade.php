@@ -31,9 +31,9 @@
                     <a class="cell__link" href="/admin/article/edit/{{ $article->id }}">
                         <i class="cell__icon material-icons"> edit </i>
                     </a>
-                    <a class="cell_link" href="/admin/article/delete/{{ $article->id }}">
+                    <button class="cell__link" href="/admin/article/delete/{{ $article->id }}">
                         <i class="cell__icon material-icons"> delete </i>
-                    </a>
+                    </button>
                 </td>
             </tr>
         @endforeach
