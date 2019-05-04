@@ -58,6 +58,11 @@
     margin-left: 10px;
 }
 
+.items__account-login:hover
+{
+    color: var(--hover-green);
+}
+
 .items__account-logout
 {
     height: 21px;

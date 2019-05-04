@@ -24,7 +24,7 @@
         @php $account = Core\Session::get('account') @endphp
         @if (Core\Session::get('logged_in'))
             <img class="items__account-image" src="{{ $account->image ? $account->image : '/public/img/account.png' }}">
-            <div class="items__account-login">{{ $account->login }}</div>
+            <a class="items__account-login" href="/account/{{ $account->login }}/view">{{ $account->login }}</a>
             <a class="items__account-logout" href="/account/logout" title="Logout">
                 <i class="items__account-logout-icon material-icons"> power_settings_new </i>
             </a>

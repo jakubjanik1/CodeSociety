@@ -32,6 +32,7 @@ $router->get('account/login', 'AccountsController@login');
 $router->post('account/login', 'AccountsController@login');
 
 $router->get('account/logout', 'AccountsController@logout');
+$router->get('account/{login}/view', 'AccountsController@view');
 
 $router->get('comments/article/{id}', 'CommentsController@comments');
 $router->post('comments/add', 'CommentsController@storeComment');

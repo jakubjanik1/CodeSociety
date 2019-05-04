@@ -68,6 +68,11 @@
     color: var(--primary-green);
 }
 
+.comment__author:hover
+{
+    color: var(--hover-green);
+}
+
 .comment__date
 {
     font-weight: 600;

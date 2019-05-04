@@ -7,18 +7,18 @@ use Tamtamchik\SimpleFlash\Flash;
 
 class AccountsRepository
 {
-    private $accounts;
+    private $db;
 
     public function __construct() 
     {
-        $this->accounts = App::get('database')->table('account');
+        $this->db = App::get('database');
     }
 
     public function addAccount($account)
     {
         $account->password = hash('ripemd128', $account->password);
 
-        $result = $this->accounts->insert($account);
+        $result = $this->db->table('account')->insert($account);
 
         if ($result)
         {
@@ -32,8 +32,16 @@ class AccountsRepository
 
     public function getAccount($account)
     {
-        return $this->accounts->where('login', $account->login)
+        return $this->db->table('account')
+            ->where('login', $account->login)
             ->where('password', $account->password)
+            ->first();
+    }
+
+    public function getAccountByLogin($login)
+    {
+        return $this->db->table('account')
+            ->where('login', $login)
             ->first();
     }
 

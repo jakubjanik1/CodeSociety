@@ -52,6 +52,15 @@ class AccountsController
         return redirectBack();
     }
 
+    public function view($login)
+    {
+        $account = $this->repository->getAccountByLogin($login);
+
+        return $account ? 
+            view('account/view', ['account' => $account]) : 
+            view('error404');
+    }
+
     public function loginExists($request)
     {
         echo $this->repository->loginExists($request->login);

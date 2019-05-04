@@ -30,7 +30,8 @@ function createComment(comment) {
     commentInfo.classList.add('comment__info');
     commentElem.append(commentInfo);
 
-    let author = document.createElement('span');
+    let author = document.createElement('a');
+    author.href = `/account/${comment.login}/view`;
     author.classList.add('comment__author');
     author.innerText = comment.login;
 
