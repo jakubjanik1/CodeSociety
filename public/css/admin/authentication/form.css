@@ -1,3 +1,8 @@
+.admin__authentication
+{
+    min-height: 100vh;
+}
+
 .authentication__form
 {
     padding: 40px 80px;

@@ -42,7 +42,7 @@
 	top: 47%;
 	left: -8px;
 	transform: rotate(135deg);
-	box-shadow: 3px 3px 12px #6d6d6d33;
+    box-shadow: 10px 10px 23px #6d6d6d33;
 	border: 8px solid;
 	border-color: transparent #fff #fff transparent;
 }
