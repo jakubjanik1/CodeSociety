@@ -38,3 +38,5 @@ $router->get('comments/article/{id}', 'CommentsController@comments');
 $router->post('comments/add', 'CommentsController@storeComment');
 
 $router->get('about', 'PagesController@about');
+$router->get('contact', 'PagesController@contact');
+$router->post('contact', 'PagesController@contact');

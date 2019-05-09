@@ -1,0 +1,26 @@
+.contact__info
+{
+    width: 80%;
+    max-width: 600px;
+    line-height: 30px;
+    text-align: justify;
+    margin-top: 32px;
+}
+
+.contact__form
+{
+    width: 80%;
+    max-width: 600px;
+}
+
+.contact__form textarea.form__input
+{
+    height: 160px;
+    resize: none;
+}
+
+.contact__form .form__button
+{
+    width: 100%;
+    margin: 32px 0 46px 0;
+}
