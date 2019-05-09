@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     let form = document.querySelector('.contact__form');
+    if (! form) return;
 
     validateName(form);
     validateMail(form);
