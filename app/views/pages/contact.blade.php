@@ -8,7 +8,7 @@
         You only have to fill out quick form. Thank you!
     </div>
 
-    <form class="contact__form" method="POST" action="contact" spellcheck="false" autocomplete="off">
+    <form class="contact__form" method="POST" action="contact" spellcheck="false" autocomplete="off" novalidate>
         <div class="form__label">
             Name
             <input class="form__input" name="name">
@@ -16,7 +16,7 @@
 
         <div class="form__label">
             Email
-            <input class="form__input" name="email">
+            <input class="form__input" name="email" type="email">
         </div>
 
         <div class="form__label">
