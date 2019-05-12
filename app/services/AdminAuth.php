@@ -9,7 +9,6 @@ class AdminAuth
     public static function authenticate($username, $password)
     {
         $auth = App::get('config')['authentication'];
-        $password = hash('ripemd128', $password);
 
         if ($username == $auth['username'] && 
             $password == $auth['password'])

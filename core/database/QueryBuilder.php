@@ -19,7 +19,7 @@ class QueryBuilder
     {
         $this->tableName = $name;
 
-        $statement = $this->pdo->prepare("select * from `{$name}`");
+        $statement = $this->pdo->prepare("select * from \"{$name}\"");
 
         $statement->execute();
         
@@ -120,7 +120,7 @@ class QueryBuilder
     {
         foreach ($this->table as $item)
         {
-            $statement = $this->pdo->prepare("delete from `{$this->tableName}` where id = :id");
+            $statement = $this->pdo->prepare("delete from \"{$this->tableName}\" where id = :id");
 
             $result = $statement->execute(['id' => $item->id]);
         }
@@ -131,10 +131,11 @@ class QueryBuilder
     public function insert($parameters)
     {
         $parameters = (array)$parameters;
+        $parameters = array_key_exists('id', $parameters) ? array_slice($parameters, 1) : $parameters;
 
         $sql = sprintf(
             'insert into %s (%s) values (%s)',
-            "`{$this->tableName}`",
+            "\"{$this->tableName}\"",
             implode(', ', array_keys($parameters)),
             ':' . implode(', :', array_keys($parameters))
         );
@@ -156,7 +157,7 @@ class QueryBuilder
 
             $sql = sprintf(
                 'update %s set %s where id = %s',
-                "`{$this->tableName}`",
+                "\"{$this->tableName}\"",
                 implode(', ', $bindList),
                 $item->id
             );
@@ -168,7 +169,7 @@ class QueryBuilder
 
     public function join($table, $field1, $field2)
     {
-        $table = $this->pdo->query("select * from {$table}")->fetchAll(PDO::FETCH_CLASS);
+        $table = $this->pdo->query("select * from \"{$table}\"")->fetchAll(PDO::FETCH_CLASS);
 
         $out = [];
         foreach ($this->table as $row1)
