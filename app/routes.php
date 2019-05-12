@@ -1,5 +1,6 @@
 <?php
 
+$router->get('', 'ArticlesController@articlesByPage');
 $router->get('articles', 'ArticlesController@articlesByPage');
 $router->get('articles/page/{page}', 'ArticlesController@articlesByPage');
 
