@@ -52,6 +52,11 @@ main
     padding-top: 46px;
 }
 
+.admin > main
+{
+    min-height: 83vh;
+}
+
 body
 {
     display: flex;

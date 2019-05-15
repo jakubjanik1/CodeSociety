@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    if (! location.pathname.match(/admin\/article\/(edit\/\d+|add)/)) {
+    if (! location.pathname.match(/admin\/article\/(edit\/.+|add)/)) {
       return;
     }
 

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    if (! location.pathname.match(/admin\/article\/(edit\/\d+|add)/)) {
+    if (! location.pathname.match(/admin\/article\/(edit\/.+|add)/)) {
         return;
     }
 
@@ -86,9 +86,18 @@ function validateCategory() {
 }
 
 function validateImage() {
-    if (! this.files[0].type.match(/image\/.*/)) {
-        addError(this.parentElement, 'File must be of image type!');
-    } else {
-        removeError(this.parentElement);
-    }
+    let url = window.URL;
+
+    let img = new Image();
+    img.src = url.createObjectURL(this.files[0]);
+
+    img.onload = () => {
+        if (! this.files[0].type.match(/image\/.*/)) {
+            addError(this.parentElement, 'File must be of image type!');
+        } else if (img.width < 1000 || img.height < 450) {
+            addError(this.parentElement, '1000 x 450 is minimum size of image!')  
+        } else {
+            removeError(this.parentElement);
+        }
+    };
 }
