@@ -10,14 +10,14 @@ $router->get('articles/category/{category}/page/{page}', 'ArticlesController@art
 $router->get('articles/search/{searchTerm}', 'ArticlesController@search');
 $router->get('articles/search/{searchTerm}/page/{page}', 'ArticlesController@search');
 
-$router->get('article/{id}', 'ArticlesController@article');
+$router->get('article/{slug}', 'ArticlesController@article');
 $router->get('article/{id}/like', 'ArticlesController@likeArticle');
 
 $router->get('admin', 'AdminController@home');
 $router->get('admin/articles', 'AdminController@articles');
 $router->get('admin/article/delete/{id}', 'AdminController@deleteArticle');
-$router->get('admin/article/edit/{id}', 'AdminController@article');
-$router->get('admin/article/add', 'AdminController@article');
+$router->get('admin/article/edit/{slug}', 'AdminController@editArticle');
+$router->get('admin/article/add', 'AdminController@addArticle');
 $router->post('admin/article/store', 'AdminController@storeArticle');
 
 $router->get('admin/authenticate', 'AdminController@authenticate');

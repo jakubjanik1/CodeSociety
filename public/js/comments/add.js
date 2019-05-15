@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    if (! document.querySelector('.items__account-login') || ! /article\/\d+/.test(location.href)) return;
+    if (! document.querySelector('.items__account-login') || ! /article\/.+/.test(location.href)) return;
 
     let content = document.querySelector('.add__content');
     content.addEventListener('click', function() {

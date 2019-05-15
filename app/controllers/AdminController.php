@@ -50,11 +50,18 @@ class AdminController
         return view('admin/home');
     }
 
-    protected function article($id = null)
+    protected function editArticle($slug = null)
     {
-        $article = $this->repository->getArticle($id);
+        $article = $this->repository->getArticle($slug);
 
-        return view('admin/article', ['article' => $article]);
+        return $article ? 
+            view('admin/article', ['article' => $article]) :
+            view('error404');
+    }
+
+    protected function addArticle()
+    {
+        return view('admin/article', ['article' => null]);
     }
 
     protected function storeArticle($article)

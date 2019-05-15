@@ -19,7 +19,7 @@
     cursor: pointer;
 }
 
-.article-thumbnail__id
+.article-thumbnail__slug, .article-thumbnail__id
 {
     display: none;
 }

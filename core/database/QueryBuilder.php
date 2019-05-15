@@ -59,6 +59,15 @@ class QueryBuilder
         return $this;
     }
 
+    public function whereNot($field, $value)
+    {
+        $this->table = array_filter($this->table, function($item) use ($field, $value) {
+            return $item->$field != $value;
+        });
+
+        return $this;
+    }
+
     public function whereRegexp($field, $pattern)
     {
         $this->table = array_filter($this->table, function($item) use ($field, $pattern) {

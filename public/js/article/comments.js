@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    if (! /article\/\d+/.test(location.pathname)) return;
+    if (! /article\/.+/.test(location.pathname)) return;
 
-    let articleId = location.pathname.split('/').pop();
+    let articleId = document.querySelector('.article__id').innerText;
     fetch(`/comments/article/${articleId}`)
         .then(res => res.json())
         .then(comments => displayComments(comments));

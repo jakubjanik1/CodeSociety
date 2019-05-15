@@ -22,6 +22,7 @@
         @foreach ($articles as $article)  
             <div class="list__article-thumbnail">
                 <p class="article-thumbnail__id">{{ $article->id }}</p>
+                <p class="article-thumbnail__slug">{{ $article->slug }}</p>
 
                 <img class="article-thumbnail__image" src="{{ $article->image }}">
 

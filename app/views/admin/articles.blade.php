@@ -28,7 +28,7 @@
                 <td class="table__cell">{{ $article->category }}</td>
                 <td class="table__cell">{{ date('M d, Y', strtotime($article->date)) }}</td>
                 <td class="table__cell">
-                    <a class="cell__link" href="/admin/article/edit/{{ $article->id }}">
+                    <a class="cell__link" href="/admin/article/edit/{{ $article->slug }}">
                         <i class="cell__icon material-icons"> edit </i>
                     </a>
                     <button class="cell__link" href="/admin/article/delete/{{ $article->id }}">

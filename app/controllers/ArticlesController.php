@@ -14,9 +14,9 @@ class ArticlesController
         $this->repository = new ArticlesRepository();
     }
 
-    public function article($id)
+    public function article($slug)
     {
-        $article = $this->repository->getArticle($id);
+        $article = $this->repository->getArticle($slug);
         $accountLikes = $this->repository->getAccountLikes();
 
         return $article ? 

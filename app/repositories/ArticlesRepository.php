@@ -6,6 +6,7 @@ use Core\App;
 use Services\Newsletter;
 use Core\Session;
 use Tamtamchik\SimpleFlash\Flash;
+use Services\Slug;
 
 class ArticlesRepository
 {
@@ -17,10 +18,10 @@ class ArticlesRepository
         $this->db = App::get('database');
     }
 
-    public function getArticle($id)
+    public function getArticle($slug)
     {
         $article = $this->db->table('article')
-            ->where('id', $id)
+            ->where('slug', $slug)
             ->first();
 
         return $article;
@@ -46,6 +47,7 @@ class ArticlesRepository
     {
         if ($article->id)
         {
+            $article->slug = Slug::createSlug($article->title, $article->id);
             $result = $this->db->table('article')->where('id', $article->id)->update($article);
 
             if ($result) 
@@ -59,6 +61,7 @@ class ArticlesRepository
         }
         else 
         {
+            $article->slug = Slug::createSlug($article->title);
             $result = $this->db->table('article')->insert($article);
 
             if ($result) 
@@ -82,7 +85,7 @@ class ArticlesRepository
 
     public function getAllArticles()
     {
-        return $this->db->table('article')->get();
+        return $this->db->table('article')->orderBy('id', 'asc')->get();
     }
 
     public function getArticles($page, $category = null, $searchTerm = null)
