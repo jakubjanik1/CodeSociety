@@ -4,7 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeSociety</title>
-    
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139693261-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-139693261-1');
+    </script>
+
+
     {{ includeMainStyles() }}
 
     <link href="https://fonts.googleapis.com/css?family=Dosis:500,600,700" rel="stylesheet">
