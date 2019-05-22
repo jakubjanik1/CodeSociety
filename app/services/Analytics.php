@@ -19,7 +19,7 @@ class Analytics
             $credentials['site_id'],
             $credentials['client_id'],
             $credentials['service_email'],
-            __DIR__ . '\..\..\config\analytics.p12'
+            __DIR__ . '/../../config/analytics.p12'
         );
 
         $this->db = App::get('database');
