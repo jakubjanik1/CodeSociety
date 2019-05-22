@@ -4,14 +4,17 @@ namespace Controllers;
 
 use Repositories\ArticlesRepository;
 use Services\AdminAuth;
+use Services\Analytics;
 
 class AdminController
 {
     private $repository;
+    private $analytics;
 
     public function __construct() 
     {
         $this->repository = new ArticlesRepository();
+        $this->analytics = new Analytics();
     }
 
     public function __call($method, $arguments)
@@ -47,7 +50,12 @@ class AdminController
 
     protected function home()
     {
-        return view('admin/home');
+        $visits = $this->analytics->getVisitsFromToday();
+        $newAccounts = $this->analytics->getNewAccountsFromToday();
+        $newComments = $this->analytics->getNewCommentsFromToday();
+        $newArticles = $this->analytics->getNewArticlesFromToday();
+    
+        return view('admin/home', ['visits' => $visits, 'newAccounts' => $newAccounts, 'newComments' => $newComments, 'newArticles' => $newArticles]);
     }
 
     protected function editArticle($slug = null)

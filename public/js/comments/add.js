@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let formData = new FormData();
         formData.append('content', content.innerText);
-        formData.append('article_id', location.pathname.match(/\d+$/).pop());
+        formData.append('article_id', document.querySelector('.article__id').innerText);
 
         let fetchData = {
             method: 'POST',

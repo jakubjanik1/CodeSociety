@@ -13,5 +13,10 @@ return [
     'authentication' => [
         'username' => getenv('ADMIN_NAME'), 
         'password' => getenv('ADMIN_PASSWORD')
+    ],
+    'analytics' => [
+        'site_id' => getenv('SITE_ID'),
+        'client_id' => getenv('CLIENT_ID'),
+        'service_email' => getenv('SERVICE_EMAIL') 
     ]
 ];

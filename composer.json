@@ -10,11 +10,12 @@
         ]
     },
     "require": {
-        "nesbot/carbon": "^2.16",
+        "nesbot/carbon": "1.37.1",
         "windwalker/edge": "~3.0",
         "phpmailer/phpmailer": "~6.0",
         "tamtamchik/simple-flash": "^1.2",
         "vlucas/phpdotenv": "^3.3",
-        "cocur/slugify": "^3.2"
+        "cocur/slugify": "^3.2",
+        "spatie/analytics-statistics": "^1.0"
     }
 }

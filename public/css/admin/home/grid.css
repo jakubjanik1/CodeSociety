@@ -1,0 +1,32 @@
+.home__grid
+{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    position: relative;
+    margin-top: 48px;
+    margin-bottom: 32px;
+}
+
+.home__subtitle
+{
+    position: absolute;
+    left: calc(50% - 60px);
+    top: -16px;
+    font-size: 19px;
+}
+
+@media screen and (max-width: 1670px)
+{
+    .home__grid
+    {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media screen and (max-width: 710px)
+{
+    .home__grid
+    {
+        grid-template-columns: auto;
+    }
+}

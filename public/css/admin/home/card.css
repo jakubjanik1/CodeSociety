@@ -1,0 +1,39 @@
+.home__card
+{
+    margin: 32px;
+    padding: 24px;
+    box-shadow: var(--primary-shadow);
+    border-radius: 4px;
+}
+
+.home__card--stats
+{
+    width: 235px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 30px 30px;
+    grid-template-areas: 
+        "icon category"
+        "icon value"
+}
+
+.card__icon
+{
+    grid-area: icon;
+    font-size: 55px !important;
+    color: var(--primary-green) !important;
+    padding: 3px;
+}
+
+.card__category
+{
+    grid-area: category;
+    text-align: right;
+}
+
+.card__value
+{
+    grid-area: value;
+    text-align: right;
+    font-size: 26px;
+}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3c90c33667b2a1f9d675895750aa888",
+    "content-hash": "44eca5099ddf46ce18a349356d87ef76",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -72,31 +72,72 @@
             "time": "2019-01-31T20:38:55+00:00"
         },
         {
-            "name": "nesbot/carbon",
-            "version": "2.17.1",
+            "name": "google/apiclient",
+            "version": "v1.1.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "96acbc0c03782e8115156dd4dd8b736267155066"
+                "url": "https://github.com/googleapis/google-api-php-client.git",
+                "reference": "85309a3520bb5f53368d43e35fd24f43c9556323"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/96acbc0c03782e8115156dd4dd8b736267155066",
-                "reference": "96acbc0c03782e8115156dd4dd8b736267155066",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/85309a3520bb5f53368d43e35fd24f43c9556323",
+                "reference": "85309a3520bb5f53368d43e35fd24f43c9556323",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*",
-                "php": "^7.1.8 || ^8.0",
-                "symfony/translation": "^3.4 || ^4.0"
+                "php": ">=5.2.1"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
-                "kylekatarnls/multi-tester": "^1.1",
-                "phpmd/phpmd": "^2.6",
-                "phpstan/phpstan": "^0.11",
-                "phpunit/phpunit": "^7.5 || ^8.0",
-                "squizlabs/php_codesniffer": "^3.4"
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-v1-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Google/autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "time": "2016-06-06T21:22:48+00:00"
+        },
+        {
+            "name": "nesbot/carbon",
+            "version": "1.37.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "5be4fdf97076a685b23efdedfc2b73ad0c5eab70"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/5be4fdf97076a685b23efdedfc2b73ad0c5eab70",
+                "reference": "5be4fdf97076a685b23efdedfc2b73ad0c5eab70",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "symfony/translation": "~2.6 || ~3.0 || ~4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7"
+            },
+            "suggest": {
+                "friendsofphp/php-cs-fixer": "Needed for the `composer phpcs` command. Allow to automatically fix code style.",
+                "phpstan/phpstan": "Needed for the `composer phpstan` command. Allow to detect potential errors."
             },
             "type": "library",
             "extra": {
@@ -108,7 +149,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Carbon\\": "src/Carbon/"
+                    "": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -129,7 +170,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-04-27T18:04:27+00:00"
+            "time": "2019-04-19T10:27:42+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -246,6 +287,73 @@
                 "type"
             ],
             "time": "2015-07-25T16:39:46+00:00"
+        },
+        {
+            "name": "spatie/analytics-statistics",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/analytics-statistics.git",
+                "reference": "7545a87bf8e01fc17bc6c70112d5bcc54bbee476"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/analytics-statistics/zipball/7545a87bf8e01fc17bc6c70112d5bcc54bbee476",
+                "reference": "7545a87bf8e01fc17bc6c70112d5bcc54bbee476",
+                "shasum": ""
+            },
+            "require": {
+                "google/apiclient": "1.1.*",
+                "nesbot/carbon": "^1.19",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Analytics\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://murze.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Matthias De Winter",
+                    "email": "dewinter.matthias@gmail.com",
+                    "homepage": "https://github.com/MatthiasDeWinter",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastiandedeyne@gmail.com",
+                    "homepage": "https://github.com/sebastiandedeyne",
+                    "role": "Developer"
+                }
+            ],
+            "description": "An opinionated php package to retrieve Google Analytics data.",
+            "homepage": "https://github.com/spatie/analytics-statistics",
+            "keywords": [
+                "google-analytics",
+                "spatie"
+            ],
+            "time": "2015-06-02T14:12:15+00:00"
         },
         {
             "name": "symfony/contracts",
@@ -623,16 +731,16 @@
         },
         {
             "name": "windwalker/edge",
-            "version": "3.5.4",
+            "version": "3.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ventoviro/windwalker-edge.git",
-                "reference": "956fe62a56ce82f43fc2b7c4fbe69f85d55b713e"
+                "reference": "7c43904a885a802da66d8a8139e05d05a9b2f477"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ventoviro/windwalker-edge/zipball/956fe62a56ce82f43fc2b7c4fbe69f85d55b713e",
-                "reference": "956fe62a56ce82f43fc2b7c4fbe69f85d55b713e",
+                "url": "https://api.github.com/repos/ventoviro/windwalker-edge/zipball/7c43904a885a802da66d8a8139e05d05a9b2f477",
+                "reference": "7c43904a885a802da66d8a8139e05d05a9b2f477",
                 "shasum": ""
             },
             "require": {
@@ -666,7 +774,7 @@
                 "template",
                 "windwalker"
             ],
-            "time": "2019-04-27T13:13:41+00:00"
+            "time": "2019-04-28T06:01:00+00:00"
         }
     ],
     "packages-dev": [],
