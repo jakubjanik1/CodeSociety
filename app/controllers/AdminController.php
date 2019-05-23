@@ -54,8 +54,14 @@ class AdminController
         $newAccounts = $this->analytics->getNewAccountsFromToday();
         $newComments = $this->analytics->getNewCommentsFromToday();
         $newArticles = $this->analytics->getNewArticlesFromToday();
+        $visitsChart = $this->analytics->getVisitsChartFromLastWeek();
     
-        return view('admin/home', ['visits' => $visits, 'newAccounts' => $newAccounts, 'newComments' => $newComments, 'newArticles' => $newArticles]);
+        return view('admin/home', ['visits' => $visits, 
+            'newAccounts' => $newAccounts, 
+            'newComments' => $newComments, 
+            'newArticles' => $newArticles,
+            'visitsChart' => $visitsChart
+        ]);
     }
 
     protected function editArticle($slug = null)

@@ -37,3 +37,43 @@
     text-align: right;
     font-size: 26px;
 }
+
+
+.home__card--chart
+{
+    grid-column: 1 / span 3;
+    padding: 8px;
+}
+
+.card__chart 
+{
+    width: 962px !important;
+    height: 400px !important;
+}
+
+
+@media screen and (max-width: 1670px)
+{
+    .home__card--chart
+    {
+        grid-column: 1 / span 2;
+    }
+
+    .card__chart 
+    {
+        width: 614px !important;
+    }
+}
+
+@media screen and (max-width: 710px)
+{
+    .home__card--chart
+    {
+        grid-column: 1 / span 1;
+    }
+    
+    .card__chart 
+    {
+        width: 262px !important;
+    }
+}

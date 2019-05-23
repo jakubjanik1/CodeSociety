@@ -5,6 +5,7 @@ namespace Services;
 use Spatie\Analytics\Analytics as _Analytics;
 use Core\App;
 use Carbon\Carbon;
+use ChartJs\ChartJS;
 
 class Analytics
 {
@@ -60,5 +61,61 @@ class Analytics
         });
 
         return count($dates);
+    }
+
+    public function getVisitsChartFromLastWeek()
+    {
+        $latestVisits = $this->analytics->getVisitorsAndPageViewsForPeriod(Carbon::now()->subDays(6), Carbon::now());
+
+        $labels = array_map(function($item) {
+            return Carbon::parse($item['date'])->format('D');
+        }, $latestVisits);
+
+        $visits = array_map(function($item) {
+            return $item['visitors'];
+        }, $latestVisits);
+
+        $pageViews = array_map(function($item) {
+            return $item['pageViews'];
+        }, $latestVisits);
+
+        $data = [
+            'labels' => $labels,
+            'datasets' => [[
+                'data' => $pageViews,
+                'backgroundColor' => 'transparent',
+                'borderColor' => '#3dd07d',
+                'label' => 'Page Views'
+            ], [
+                'data' => $visits,
+                'backgroundColor' => 'transparent',
+                'borderColor' => '#ff7979',
+                'label' => 'Visits'
+            ]]
+        ];
+        $options = [
+            'gridLines' => ['display' => false],
+            'responsive' => true, 
+            'maintainAspectRatio' => false,
+            'legend' => [
+                'display' => true,
+                'position' => 'bottom',
+                'labels' => [
+                    'padding' => 16
+                ]
+            ], 
+            'title' => [
+                'text' => 'Last week visits', 
+                'display' => true,
+                'fontSize' => 19,
+                'fontFamily' => 'Dosis, sans-serif',
+                'fontStyle' => 'normal',
+                'padding' => 16
+            ],
+            'tooltips' => ['backgroundColor' => '#6d6d6d']
+        ];
+        
+        $attributes = ['class' => 'card__chart'];
+        return new ChartJS('line', $data, $options, $attributes);
     }
 }

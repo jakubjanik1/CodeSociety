@@ -29,5 +29,10 @@
             <div class="card__category"> New articles </div>
             <div class="card__value">{{ $newArticles }}</div>
         </div>
+
+        <div class="home__card home__card--chart">
+            {!! $visitsChart !!}
+            <script> loadChartJsPhp() </script>
+        </div>
     </div>
 </main>

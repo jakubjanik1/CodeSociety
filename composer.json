@@ -16,6 +16,7 @@
         "tamtamchik/simple-flash": "^1.2",
         "vlucas/phpdotenv": "^3.3",
         "cocur/slugify": "^3.2",
-        "spatie/analytics-statistics": "^1.0"
+        "spatie/analytics-statistics": "^1.0",
+        "ejdamm/chart.js-php": "^2.0"
     }
 }
