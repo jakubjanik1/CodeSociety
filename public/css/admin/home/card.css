@@ -38,32 +38,18 @@
     font-size: 26px;
 }
 
-
 .home__card--chart
 {
-    grid-column: 1 / span 3;
+    grid-column: auto / span 2;
     padding: 8px;
 }
 
-#card__chart 
+#card__chart--visits, #card__chart--browsers
 {
-    width: 962px !important;
+    width: 614px !important;
     height: 400px !important;
 }
 
-
-@media screen and (max-width: 1670px)
-{
-    .home__card--chart
-    {
-        grid-column: 1 / span 2;
-    }
-
-    #card__chart 
-    {
-        width: 614px !important;
-    }
-}
 
 @media screen and (max-width: 710px)
 {
@@ -72,8 +58,8 @@
         grid-column: 1 / span 1;
     }
     
-    #card__chart 
+    #card__chart--visits, #card__chart--browsers
     {
-        width: 262px !important;
+        width: 267px !important;
     }
 }

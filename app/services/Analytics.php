@@ -5,7 +5,7 @@ namespace Services;
 use Spatie\Analytics\Analytics as _Analytics;
 use Core\App;
 use Carbon\Carbon;
-use Bbsnly\ChartJs\LineChart;
+use Bbsnly\ChartJs\{LineChart, DoughnutChart};
 
 class Analytics
 {
@@ -118,6 +118,62 @@ class Analytics
             'tooltips' => ['backgroundColor' => '#6d6d6d']
         ]);
 
-        return $chart->toHtml('card__chart');
+        return $chart->toHtml('card__chart--visits');
+    }
+
+    public function getBrowsersChart()
+    {
+        $browsers = $this->analytics->getTopBrowsers();
+
+        $labels = array_map(function($item) {
+            return $item['browser'];
+        }, $browsers);
+        
+        $values = array_map(function($item) {
+            return $item['sessions'];
+        }, $browsers);
+
+        $sum = array_sum($values);
+
+        $values = array_map(function($value) use ($sum) {
+            return round(($value / $sum) * 100, 1);
+        }, $values);
+
+        $chart = new DoughnutChart();
+
+        $colors = ['#3dd07d', '#ff7979', '#7979ff', '#d9dc0e', '#da63b0', '#5a5357'];
+        $chart->data([
+            'labels' => $labels,
+            'datasets' => [[
+                'data' => $values,
+                'backgroundColor' => $colors,
+                'hoverBackgroundColor' =>  $colors,
+                'borderColor' =>  '#fff',
+                'hoverBorderColor' =>  '#fff'
+            ]]
+        ]);
+
+        $chart->options([
+            'responsive' => true, 
+            'maintainAspectRatio' => false,
+            'legend' => [
+                'display' => true,
+                'position' => 'bottom',
+                'labels' => [
+                    'padding' => 20
+                ]
+            ], 
+            'title' => [
+                'text' => 'Top browsers', 
+                'display' => true,
+                'fontSize' => 19,
+                'fontFamily' => 'Dosis, sans-serif',
+                'fontStyle' => 'normal',
+                'padding' => 16
+            ],
+            'tooltips' => ['backgroundColor' => '#6d6d6d']
+        ]);
+
+        return $chart->toHtml('card__chart--browsers');
     }
 }

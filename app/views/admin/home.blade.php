@@ -33,5 +33,9 @@
         <div class="home__card home__card--chart">
             {!! $visitsChart !!}
         </div>
+
+        <div class="home__card home__card--chart">
+            {!! $browsersChart !!}
+        </div>
     </div>
 </main>
