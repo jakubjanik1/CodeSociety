@@ -32,7 +32,6 @@
 
         <div class="home__card home__card--chart">
             {!! $visitsChart !!}
-            <script> loadChartJsPhp() </script>
         </div>
     </div>
 </main>

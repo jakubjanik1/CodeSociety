@@ -45,7 +45,7 @@
     padding: 8px;
 }
 
-.card__chart 
+#card__chart 
 {
     width: 962px !important;
     height: 400px !important;
@@ -59,7 +59,7 @@
         grid-column: 1 / span 2;
     }
 
-    .card__chart 
+    #card__chart 
     {
         width: 614px !important;
     }
@@ -72,7 +72,7 @@
         grid-column: 1 / span 1;
     }
     
-    .card__chart 
+    #card__chart 
     {
         width: 262px !important;
     }

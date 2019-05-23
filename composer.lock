@@ -4,8 +4,60 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c394f3688d756c6f3e9ce3da603a7497",
+    "content-hash": "15a141f312457f54017458555d114d30",
     "packages": [
+        {
+            "name": "bbsnly/chartjs-php",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bbsnly/chartjs-php.git",
+                "reference": "fcd90fb7801feea5a65bca9542847b747be00c09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bbsnly/chartjs-php/zipball/fcd90fb7801feea5a65bca9542847b747be00c09",
+                "reference": "fcd90fb7801feea5a65bca9542847b747be00c09",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bbsnly\\ChartJs\\ChartServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bbsnly\\ChartJs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anatoliy Babushka",
+                    "email": "anatoliybabushka@gmail.com"
+                }
+            ],
+            "description": "Laravel helper for ChartJS 2.0",
+            "homepage": "https://github.com/bbsnly/chartjs-php",
+            "keywords": [
+                "chartjs",
+                "laravel",
+                "php"
+            ],
+            "time": "2019-03-12T21:23:05+00:00"
+        },
         {
             "name": "cocur/slugify",
             "version": "v3.2",
@@ -70,57 +122,6 @@
                 "slugify"
             ],
             "time": "2019-01-31T20:38:55+00:00"
-        },
-        {
-            "name": "ejdamm/chart.js-php",
-            "version": "v2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Ejdamm/Chart.js-PHP.git",
-                "reference": "1caa5f9daa1eb4deb97edc8caae59c40d672f46b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Ejdamm/Chart.js-PHP/zipball/1caa5f9daa1eb4deb97edc8caae59c40d672f46b",
-                "reference": "1caa5f9daa1eb4deb97edc8caae59c40d672f46b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ChartJs\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Hugo Heneault",
-                    "email": "hugo.heneault@gmail.com",
-                    "homepage": "https://github.com/HugoHeneault"
-                },
-                {
-                    "name": "Adam Georgsson",
-                    "email": "adamgeorgsson@gmail.com",
-                    "homepage": "https://github.com/Ejdamm"
-                },
-                {
-                    "name": "Christof Bachmann",
-                    "email": "code@christof-b.de",
-                    "homepage": "https://github.com/christof-b"
-                }
-            ],
-            "description": "PHP Wrapper for Chart.js.",
-            "homepage": "https://github.com/Ejdamm/Chart.js-PHP",
-            "time": "2018-03-10T08:51:00+00:00"
         },
         {
             "name": "google/apiclient",

@@ -20,6 +20,5 @@
     <script src="https://cdn.quilljs.com/1.2.2/quill.min.js"></script>
     <script src="https://cdn.rawgit.com/kensnyder/quill-image-resize-module/3411c9a7/image-resize.min.js"></script>
     <script src="/public/js/flash.js"></script>
-    <script src="/vendor/ejdamm/chart.js-php/js/Chart.min.js"></script>
-    <script src="/vendor/ejdamm/chart.js-php/js/driver.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 </head>

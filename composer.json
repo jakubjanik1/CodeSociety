@@ -17,6 +17,6 @@
         "vlucas/phpdotenv": "^3.3",
         "cocur/slugify": "^3.2",
         "spatie/analytics-statistics": "^1.0",
-        "ejdamm/chart.js-php": "^2.0"
+        "bbsnly/chartjs-php": "^2.2"
     }
 }

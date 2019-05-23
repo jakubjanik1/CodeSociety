@@ -5,7 +5,7 @@ namespace Services;
 use Spatie\Analytics\Analytics as _Analytics;
 use Core\App;
 use Carbon\Carbon;
-use ChartJs\ChartJS;
+use Bbsnly\ChartJs\LineChart;
 
 class Analytics
 {
@@ -79,7 +79,9 @@ class Analytics
             return $item['pageViews'];
         }, $latestVisits);
 
-        $data = [
+        $chart = new LineChart();
+
+        $chart->data([
             'labels' => $labels,
             'datasets' => [[
                 'data' => $pageViews,
@@ -92,8 +94,9 @@ class Analytics
                 'borderColor' => '#ff7979',
                 'label' => 'Visits'
             ]]
-        ];
-        $options = [
+        ]);
+
+        $chart->options([
             'gridLines' => ['display' => false],
             'responsive' => true, 
             'maintainAspectRatio' => false,
@@ -113,9 +116,8 @@ class Analytics
                 'padding' => 16
             ],
             'tooltips' => ['backgroundColor' => '#6d6d6d']
-        ];
-        
-        $attributes = ['class' => 'card__chart'];
-        return new ChartJS('line', $data, $options, $attributes);
+        ]);
+
+        return $chart->toHtml('card__chart');
     }
 }
