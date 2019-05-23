@@ -1,6 +1,5 @@
 .home__card
 {
-    margin: 32px;
     padding: 24px;
     box-shadow: var(--primary-shadow);
     border-radius: 4px;
@@ -8,7 +7,6 @@
 
 .home__card--stats
 {
-    width: 235px;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 30px 30px;

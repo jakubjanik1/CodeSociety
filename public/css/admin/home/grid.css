@@ -2,16 +2,17 @@
 {
     display: grid;
     grid-template-columns: repeat(4, auto);
+    grid-gap: 42px;
     position: relative;
-    margin-top: 48px;
-    margin-bottom: 32px;
+    margin-top: 66px;
+    margin-bottom: 48px;
 }
 
 .home__subtitle
 {
     position: absolute;
     left: calc(50% - 60px);
-    top: -16px;
+    top: -42px;
     font-size: 19px;
 }
 
