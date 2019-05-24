@@ -97,14 +97,15 @@ class Analytics
         ]);
 
         $chart->options([
-            'gridLines' => ['display' => false],
             'responsive' => true, 
             'maintainAspectRatio' => false,
             'legend' => [
                 'display' => true,
                 'position' => 'bottom',
                 'labels' => [
-                    'padding' => 16
+                    'padding' => 16,
+                    'fontFamily' => 'Dosis, sans-serif',
+                    'fontSize' => 14
                 ]
             ], 
             'title' => [
@@ -115,7 +116,10 @@ class Analytics
                 'fontStyle' => 'normal',
                 'padding' => 16
             ],
-            'tooltips' => ['backgroundColor' => '#6d6d6d']
+            'tooltips' => [
+                'backgroundColor' => '#6d6d6d',
+                'bodyFontFamily' => 'Dosis, sans-serif'
+            ]
         ]);
 
         return $chart->toHtml('card__chart--visits');
@@ -160,7 +164,9 @@ class Analytics
                 'display' => true,
                 'position' => 'bottom',
                 'labels' => [
-                    'padding' => 20
+                    'padding' => 20,
+                    'fontFamily' => 'Dosis, sans-serif',
+                    'fontSize' => 14
                 ]
             ], 
             'title' => [
@@ -171,7 +177,10 @@ class Analytics
                 'fontStyle' => 'normal',
                 'padding' => 16
             ],
-            'tooltips' => ['backgroundColor' => '#6d6d6d']
+            'tooltips' => [
+                'backgroundColor' => '#6d6d6d',
+                'bodyFontFamily' => 'Dosis, sans-serif'
+            ]
         ]);
 
         return $chart->toHtml('card__chart--browsers');
