@@ -6,6 +6,7 @@ use Spatie\Analytics\Analytics as _Analytics;
 use Core\App;
 use Carbon\Carbon;
 use Bbsnly\ChartJs\{LineChart, DoughnutChart};
+use Khill\Lavacharts\Lavacharts;
 
 class Analytics
 {
@@ -184,5 +185,25 @@ class Analytics
         ]);
 
         return $chart->toHtml('card__chart--browsers');
+    }
+
+    public function getVisitsMap()
+    {
+        $countries = $this->analytics->performQuery(
+            Carbon::now()->subYear(), 
+            Carbon::now(), 
+            'ga:sessions', ['dimensions' => 'ga:country']
+        );
+
+        $chart = new Lavacharts();
+
+        $data = $chart->DataTable();
+
+        $data->addStringColumn('Country')
+            ->addNumberColumn('Visists')
+            ->addRows($countries->rows);
+
+        $chart->GeoChart('Visits', $data);
+        return $chart;
     }
 }

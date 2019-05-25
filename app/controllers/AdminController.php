@@ -56,13 +56,15 @@ class AdminController
         $newArticles = $this->analytics->getNewArticlesFromToday();
         $visitsChart = $this->analytics->getVisitsChartFromLastWeek();
         $browserChart = $this->analytics->getBrowsersChart();
+        $visitsMap = $this->analytics->getVisitsMap();
     
         return view('admin/home', ['visits' => $visits, 
             'newAccounts' => $newAccounts, 
             'newComments' => $newComments, 
             'newArticles' => $newArticles,
             'visitsChart' => $visitsChart,
-            'browsersChart' => $browserChart
+            'browsersChart' => $browserChart,
+            'visitsMap' => $visitsMap
         ]);
     }
 

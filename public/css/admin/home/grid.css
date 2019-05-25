@@ -1,7 +1,7 @@
 .home__grid
 {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 280px);
     grid-gap: 42px;
     position: relative;
     margin-top: 66px;
@@ -20,7 +20,7 @@
 {
     .home__grid
     {
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(2, 280px);
     }
 }
 
@@ -28,6 +28,6 @@
 {
     .home__grid
     {
-        grid-template-columns: auto;
+        grid-template-columns: 280px;
     }
 }

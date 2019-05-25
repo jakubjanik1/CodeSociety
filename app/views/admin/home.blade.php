@@ -37,5 +37,11 @@
         <div class="home__card home__card--chart">
             {!! $browsersChart !!}
         </div>
+
+        <div class="home__card home__card--map">
+            <div class="card__title">Visits map</div>
+            <div id="card__chart--map"></div>
+            {!! $visitsMap->render('GeoChart', 'Visits', 'card__chart--map') !!}
+        </div>
     </div>
 </main>
