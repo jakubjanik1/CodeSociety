@@ -5,7 +5,7 @@ namespace Services;
 use Spatie\Analytics\Analytics as _Analytics;
 use Core\App;
 use Carbon\Carbon;
-use Bbsnly\ChartJs\{LineChart, DoughnutChart};
+use Bbsnly\ChartJs\{LineChart, DoughnutChart, BarChart};
 use Khill\Lavacharts\Lavacharts;
 
 class Analytics
@@ -205,5 +205,69 @@ class Analytics
 
         $chart->GeoChart('Visits', $data);
         return $chart;
+    }
+
+    public function getMostVisitedPagesFromLastWeek()
+    {
+        $mostVisitedPages = $this->analytics->getMostVisitedPagesForPeriod(Carbon::now()->subDays(6), Carbon::now());
+
+        $pages = [];
+        foreach ($mostVisitedPages as $item)
+        {
+            $pages[$item['url']] = (int)$item['pageViews'];
+        }
+
+        $labels = [];
+        foreach ($pages as $page => $visits) 
+        {
+            $key = substr($page, 0, 19);
+            if (strlen($page) > 19) $key .= '...';
+
+            $labels[] = $key;
+        }
+
+        $chart = new BarChart();
+        $chart->type = 'horizontalBar';
+
+        $chart->data([
+            'labels' => $labels,
+            'datasets' => [[
+                'data' => array_values($pages),
+                'backgroundColor' => '#3dd07d',
+                'hoverBackgroundColor' => '#3dd07d',
+                'borderColor' => '#3dd07d',
+                'hoverBorderColor' => '#3dd07d',
+                'label' => 'Page Views'
+            ]]
+        ]);
+
+        $chart->options([
+            'responsive' => true, 
+            'maintainAspectRatio' => false,
+            'legend' => [
+                'display' => true,
+                'position' => 'bottom',
+                'labels' => [
+                    'padding' => 20,
+                    'fontFamily' => 'Dosis, sans-serif',
+                    'fontSize' => 14
+                ]
+            ], 
+            'title' => [
+                'text' => 'Last week most visited pages', 
+                'display' => true,
+                'fontSize' => 19,
+                'fontFamily' => 'Dosis, sans-serif',
+                'fontStyle' => 'normal',
+                'padding' => 16
+            ],
+            'tooltips' => [
+                'backgroundColor' => '#6d6d6d',
+                'bodyFontFamily' => 'Dosis, sans-serif',
+                'label' => 'sdadsa'
+            ]
+        ]);
+
+        return $chart->toHtml('card__chart--pages');
     }
 }

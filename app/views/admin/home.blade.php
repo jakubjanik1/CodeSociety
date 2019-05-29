@@ -43,5 +43,9 @@
             <div id="card__chart--map"></div>
             {!! $visitsMap->render('GeoChart', 'Visits', 'card__chart--map') !!}
         </div>
+
+        <div class="home__card home__card--chart">
+            {!! $mostVisitedPages !!}
+        </div>
     </div>
 </main>

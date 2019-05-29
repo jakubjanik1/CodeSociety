@@ -61,7 +61,7 @@
     fill: var(--text-color);
 }
 
-#card__chart--visits, #card__chart--browsers, #card__chart-map
+#card__chart--visits, #card__chart--browsers, #card__chart--pages
 {
     height: 400px !important;
 }

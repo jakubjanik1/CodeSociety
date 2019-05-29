@@ -57,6 +57,7 @@ class AdminController
         $visitsChart = $this->analytics->getVisitsChartFromLastWeek();
         $browserChart = $this->analytics->getBrowsersChart();
         $visitsMap = $this->analytics->getVisitsMap();
+        $mostVisitedPages = $this->analytics->getMostVisitedPagesFromLastWeek();
     
         return view('admin/home', ['visits' => $visits, 
             'newAccounts' => $newAccounts, 
@@ -64,7 +65,8 @@ class AdminController
             'newArticles' => $newArticles,
             'visitsChart' => $visitsChart,
             'browsersChart' => $browserChart,
-            'visitsMap' => $visitsMap
+            'visitsMap' => $visitsMap,
+            'mostVisitedPages' => $mostVisitedPages
         ]);
     }
 
