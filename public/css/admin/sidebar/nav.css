@@ -1,6 +1,8 @@
 .sidebar__nav
 {
     padding-top: 8px;
+    position: sticky;
+    top: 62px;
 }
 
 .nav__link
@@ -19,4 +21,13 @@
 .nav__link--current .nav__icon, .nav__link--current
 {
     color: var(--primary-green);
+}
+
+
+@media screen and (max-width: 1150px)
+{
+    .sidebar__nav
+    {
+        position: static;
+    }
 }

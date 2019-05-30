@@ -9,6 +9,12 @@
     box-sizing: border-box;
 }
 
+.sidebar__logo
+{
+    position: sticky;
+    top: 16px;
+}
+
 
 @media screen and (max-width: 1150px)
 {
@@ -19,5 +25,10 @@
         width: 100%;
         border-right: 0;
         border-bottom: 2px solid #eaeaea;
+    }
+
+    .sidebar__logo
+    {
+        position: static;
     }
 }
