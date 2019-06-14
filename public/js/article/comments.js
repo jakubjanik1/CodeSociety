@@ -24,7 +24,7 @@ function createComment(comment) {
 
     let image = document.createElement('img');
     image.classList.add('comment__image');
-    image.src = comment.image;
+    image.src = comment.image ? comment.image : '/public/img/account.png';
 
     let commentInfo = document.createElement('div');
     commentInfo.classList.add('comment__info');

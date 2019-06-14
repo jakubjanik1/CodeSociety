@@ -18,7 +18,7 @@
 
     @if (Core\Session::get('logged_in'))
         <div class="comments__add">
-            <img class="add__author" src="{{ Core\Session::get('account')->image }}">
+            <img class="add__author" src="{{ Core\Session::get('account')->image ? Core\Session::get('account')->image : '/public/img/account.png' }}">
             <div class="add__content" placeholder="Leave a message..." contenteditable></div>
             <button class="add__button"> Post </button>
         </div>

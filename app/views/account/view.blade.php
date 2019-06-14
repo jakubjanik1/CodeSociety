@@ -4,7 +4,7 @@
     <h1 class="view__title">Account</h1>
 
     <div class="view__wrapper">
-        <img class="view__image" src="{{ $account->image }}">
+        <img class="view__image" src="{{ $account->image ? $account->image : '/public/img/account.png' }}">
 
         <div class="view__grid">
             <div class="view__item--label">Login: </div>
