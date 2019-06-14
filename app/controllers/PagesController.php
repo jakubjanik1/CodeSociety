@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Services\MailSender;
 use Tamtamchik\SimpleFlash\Flash;
+use Core\App;
 
 class PagesController
 {
@@ -16,7 +17,9 @@ class PagesController
     {
         if ($request)
         {
-            MailSender::send(['jakubjanik@vp.pl'], 
+            $email = App::get('config')['email'];
+
+            MailSender::send([$email['name']], 
                 "CodeSociety - contact from {$request->name} ({$request->email})",
                 $request->message
             );

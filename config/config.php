@@ -18,5 +18,10 @@ return [
         'site_id' => getenv('SITE_ID'),
         'client_id' => getenv('CLIENT_ID'),
         'service_email' => getenv('SERVICE_EMAIL') 
+    ],
+    'email' => [
+        'name' => getenv('EMAIL_NAME'),
+        'password' => getenv('EMAIL_PASSWORD'),
+        'host' => getenv('EMAIL_HOST')
     ]
 ];

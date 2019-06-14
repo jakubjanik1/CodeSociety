@@ -8,13 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.querySelectorAll('input, textarea').forEach(function(elem) {
         elem.addEventListener('focusout', function() {
-            if (event.relatedTarget.type == 'submit') {
-                event.relatedTarget.click();
+            if (event.relatedTarget && event.relatedTarget.type == 'submit') {
+                if (document.querySelectorAll('.form__error').length) {
+                    event.preventDefault();
+                    return;
+                }
             }
         });
     });
 
-    form.addEventListener('submit', function() {     
+    form.addEventListener('submit', function() {
         form.querySelectorAll('input, textarea').forEach(x => x.focus());
 
         if (document.querySelectorAll('.form__error').length) {

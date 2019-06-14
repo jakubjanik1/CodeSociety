@@ -3,20 +3,23 @@
 namespace Services;
 
 use PHPMailer\PHPMailer\PHPMailer;
+use Core\App;
 
 class MailSender
 {
     public static function getMail()
     {
+        ['name' => $name, 'password' => $password, 'host' => $host] = App::get('config')['email'];
+
         $mail = new PHPMailer(true);
         $mail->isSMTP();
-        $mail->Host = 'smtp.poczta.onet.pl';
+        $mail->Host = $host;
         $mail->SMTPAuth = true;
-        $mail->Username = 'jakubjanik@vp.pl';
-        $mail->Password = openssl_decrypt('8XPcJxMenwG29soSj8QoJw', 'aes128', 'zaq12wsx');
+        $mail->Username = $name;
+        $mail->Password = $password;
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465; 
-        $mail->setFrom('jakubjanik@vp.pl', 'CodeSociety');
+        $mail->setFrom($name, 'CodeSociety');
 
         return $mail;
     }
