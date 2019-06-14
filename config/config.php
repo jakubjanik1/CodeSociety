@@ -21,7 +21,6 @@ return [
     ],
     'email' => [
         'name' => getenv('EMAIL_NAME'),
-        'password' => getenv('EMAIL_PASSWORD'),
-        'host' => getenv('EMAIL_HOST')
+        'api_key' => getenv('SENDGRID_API_KEY')
     ]
 ];
