@@ -105,7 +105,7 @@ class Analytics
                 'position' => 'bottom',
                 'labels' => [
                     'padding' => 16,
-                    'fontFamily' => 'Dosis, sans-serif',
+                    'fontFamily' => 'Titillium Web, sans-serif',
                     'fontSize' => 14
                 ]
             ], 
@@ -113,13 +113,13 @@ class Analytics
                 'text' => 'Last week visits', 
                 'display' => true,
                 'fontSize' => 19,
-                'fontFamily' => 'Dosis, sans-serif',
+                'fontFamily' => 'Titillium Web, sans-serif',
                 'fontStyle' => 'normal',
                 'padding' => 16
             ],
             'tooltips' => [
                 'backgroundColor' => '#6d6d6d',
-                'bodyFontFamily' => 'Dosis, sans-serif'
+                'bodyFontFamily' => 'Titillium Web, sans-serif'
             ]
         ]);
 
@@ -166,7 +166,7 @@ class Analytics
                 'position' => 'bottom',
                 'labels' => [
                     'padding' => 20,
-                    'fontFamily' => 'Dosis, sans-serif',
+                    'fontFamily' => 'Titillium Web, sans-serif',
                     'fontSize' => 14
                 ]
             ], 
@@ -174,13 +174,13 @@ class Analytics
                 'text' => 'Top browsers', 
                 'display' => true,
                 'fontSize' => 19,
-                'fontFamily' => 'Dosis, sans-serif',
+                'fontFamily' => 'Titillium Web, sans-serif',
                 'fontStyle' => 'normal',
                 'padding' => 16
             ],
             'tooltips' => [
                 'backgroundColor' => '#6d6d6d',
-                'bodyFontFamily' => 'Dosis, sans-serif'
+                'bodyFontFamily' => 'Titillium Web, sans-serif'
             ]
         ]);
 
@@ -249,7 +249,7 @@ class Analytics
                 'position' => 'bottom',
                 'labels' => [
                     'padding' => 20,
-                    'fontFamily' => 'Dosis, sans-serif',
+                    'fontFamily' => 'Titillium Web, sans-serif',
                     'fontSize' => 14
                 ]
             ], 
@@ -257,13 +257,13 @@ class Analytics
                 'text' => 'Last week most visited pages', 
                 'display' => true,
                 'fontSize' => 19,
-                'fontFamily' => 'Dosis, sans-serif',
+                'fontFamily' => 'Titillium Web, sans-serif',
                 'fontStyle' => 'normal',
                 'padding' => 16
             ],
             'tooltips' => [
                 'backgroundColor' => '#6d6d6d',
-                'bodyFontFamily' => 'Dosis, sans-serif',
+                'bodyFontFamily' => 'Titillium Web, sans-serif',
                 'label' => 'sdadsa'
             ]
         ]);

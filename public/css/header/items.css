@@ -13,7 +13,7 @@
 
 .items__button
 {
-    padding: 10px;
+    padding: 9px;
     width: 128px;
     border: 0;
     border-radius: 4px;
@@ -37,7 +37,7 @@
 {
     background: #fff;
     border: 1px solid;
-    padding: 9px 10px 9px 10px;
+    padding: 8px 10px 8px 10px;
 }
 
 .items__button--secondary:hover
