@@ -6,13 +6,9 @@
 <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598516963/code-society/lcatdn4zhbxcez8eavvh.png"  alt="Logo">
 </p>
 
-<br>
-
-<br>
-
 </h1>
 
-<h4 align="center">CodeSociety - blog</h4>
+<h4 align="center">CodeSociety</h4>
 
 <p align="center">
   <a >
