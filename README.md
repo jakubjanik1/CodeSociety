@@ -3,7 +3,7 @@
 <br>
 
 <p align="center">
-<img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598516963/code-society/lcatdn4zhbxcez8eavvh.png"  alt="Logo">
+<img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598516963/code-society/lcatdn4zhbxcez8eavvh.webp"  alt="Logo">
 </p>
 
 </h1>
@@ -12,7 +12,7 @@
 
 <p align="center">
   <a >
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598516976/code-society/tpawgfn9jqwrorng625y.png"
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598516976/code-society/tpawgfn9jqwrorng625y.webp"
          alt="Screenshot">
   </a>
 </p>
@@ -36,31 +36,31 @@ This is a web app for blogging. Like in every blog you can see a list of article
 ## Screenshots 📺
 
 <p align="center">
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598509522/code-society/yklsfgailbjdo7if4ms4.jpg" alt="Screenshot">
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598509522/code-society/yklsfgailbjdo7if4ms4.webp" alt="Screenshot">
 </p>
 
 <p align="center">
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598517188/code-society/lmkta7ndajpfjupnksjh.jpg" alt="Screenshot">
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598517188/code-society/lmkta7ndajpfjupnksjh.webp" alt="Screenshot">
 </p>
 
 <p align="center">
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598520051/code-society/wzz1ketrrjemxqqb19mo.jpg" alt="Screenshot">
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598520051/code-society/wzz1ketrrjemxqqb19mo.webp" alt="Screenshot">
 </p>
 
 <p align="center">
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598520051/code-society/ywhs5sqbdingwotw1fa1.jpg" alt="Screenshot">
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598520051/code-society/ywhs5sqbdingwotw1fa1.webp" alt="Screenshot">
 </p>
 
 <p align="center">
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598520051/code-society/i6apnmur5eyedfkcwmki.jpg" alt="Screenshot">
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598520051/code-society/i6apnmur5eyedfkcwmki.webp" alt="Screenshot">
 </p>
 
 <p align="center">
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598520051/code-society/jkx6xydkmstdr7akp1bg.jpg" alt="Screenshot">
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598520051/code-society/jkx6xydkmstdr7akp1bg.webp" alt="Screenshot">
 </p>
 
 <p align="center">
-    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598520050/code-society/sf2fgqckgw3aoy05vbxj.jpg" alt="Screenshot">
+    <img src="https://res.cloudinary.com/djc9jias4/image/upload/v1598520050/code-society/sf2fgqckgw3aoy05vbxj.webp" alt="Screenshot">
 </p>
 
 
